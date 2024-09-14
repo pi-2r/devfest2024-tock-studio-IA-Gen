@@ -7,6 +7,7 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 
 ## Sommaire
 
-Etape 1 : [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_1)
+- [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_1)
+- [Les premiers échanges avec le bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2)
 
 

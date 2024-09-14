@@ -9,7 +9,7 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 
 - [Introduction: Tock](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_0)
 - [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_1)
-- [Les premiers échanges avec le bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2)
+- [Les premiers entrainements du bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2)
 - [Mettons un peu d'IAGen dans notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_3)
 - [Faire dérailler notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_4)
 - [Reprendre le contrôle de notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_5)

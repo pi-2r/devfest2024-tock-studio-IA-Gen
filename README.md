@@ -18,5 +18,5 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 - [Connecter notre bot à notre boutique](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_6)
 - [Bonus: Brancher notre bot sur Messenger](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_7)
 - [Resources](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_8)
-- [Remerciements]()
+- [Remerciements](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/thanks-you)
 

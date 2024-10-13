@@ -12,12 +12,13 @@
 ## A voir avec Pierre
 
 * [ ] Mettre tout les steps sur une même branch avec step1.md .. ça va vite devenir galère pour s'y retrouver pour les participant de devoir switch de branch à chaque fois et pour nous pour la rédaction et les fichiers annexes.
+* --> j'ai mis à jours les branches et cleaner les dossiers inutiles(bot, .idea, pom.xml)
 
 ### Step 1
-* [ ] Retrait de la dépendance mvn, plus besoin on utilise tout en dockerisé ?
-* [ ] Make file plus besoin avec l'image de tooling python (et nécessite internet)
-* [ ] Modification au retrait du make file car tout fait en 1 seules ligne de commande au step d'ingestion des données, plus besoin de build d'image car image de tooling
-* [ ] Indiquer à chaque participant de bien créer un namespace tock avec son nom/prénom ou pseudo ? On pourrait lancer un PAD en début de codelab tout le monde y mets son nom / pseudo pour éviter les collision ça permettra de voir si on a des risques.
+* [X] Retrait de la dépendance mvn, plus besoin on utilise tout en dockerisé ?
+* [X] Make file plus besoin avec l'image de tooling python (et nécessite internet)
+* [x] Modification au retrait du make file car tout fait en 1 seules ligne de commande au step d'ingestion des données, plus besoin de build d'image car image de tooling
+* [X] Indiquer à chaque participant de bien créer un namespace tock avec son nom/prénom ou pseudo ? On pourrait lancer un PAD en début de codelab tout le monde y mets son nom / pseudo pour éviter les collision ça permettra de voir si on a des risques.
 
 ## Step 2
 Ok pour moi rien a voir.

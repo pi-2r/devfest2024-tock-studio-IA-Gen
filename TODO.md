@@ -25,3 +25,19 @@ Ok pour moi rien a voir.
 
 ## Step 2_1 : Accélérons l'entrainement avec de l'IAGen
 Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout ce qui est lié au RAG arrive après néanmoins toutes les explication autour de LLM  / prompt / config Ollama / Open AI doivent rester. J'ai entamé le taff mais pas eu le temps de finir.
+* [X] Lnagfuse + toc studio OK
+
+## Step 2_2
+* [ ] A faire
+
+### Step 3
+* [ ] A faire
+
+### Step 4
+* [X] modification image pour matrix ok
+* [X] exemple de jealbreak
+
+### Step 5
+* [X] explication Token + tokenisatioon
+* [ ] Finaliser explication context
+* [ ] mettre exmple de prompt avec tock studio (voir benjamin avec exemple issue de la WAX)

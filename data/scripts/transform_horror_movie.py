@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('/app/data/documents_csv/horror_movies.csv')
 
 # Set the number of random rows you want to keep
-n = 5  # Example value
+n = 15  # Example value
 
 # Randomly select n rows
 df_sampled = df.sample(n=n, random_state=42)  # random_state ensures reproducibility

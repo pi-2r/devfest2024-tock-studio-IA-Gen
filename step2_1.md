@@ -4,7 +4,7 @@
 > "Good, adaptation, improvisation. But your weakness is not your technique.", The matrix, Les Wachowski, 1999
 
 Objectifs:
-- Comprendre ce qu'est un LLM et un prompt
+- Comprendre ce qu'est un LLM
 - Activer et configurer un LLM Engine
 - Lancer les 1ères générations de phrase pour entrainer plus rapidement le model
 - Découvrir une outil d'observabilité des LLM: Langfuse, créer une organisation et un projet pour obtenir les clés d’API
@@ -17,13 +17,13 @@ Objectifs:
   - [Qu'est-ce que le LLM ?](#qu-est--ce-que-le-llm-?)  
 
 - [Gen AI - Sentence generation](#gen-ai---sentence-generation)
-  - [Configuration](#configuration-1)
   - [Ollama](#Ollama)
-    - [OpenAI](#OpenAI)
       - [configuration sous Linux](#configuration-sous-linux)
       - [configuration sous MacOs](#configuration-sous-macos)
       - [Tester l'accès à Ollama](#tester-laccès-à-ollama)
-    - [Azure OpenAI](#AzureOpenAI)
+      - [Configurer Ollama dans le generate sentence](#configurer-ollama-dans-le-generate-sentence)
+  - [Configurer OpenAI dans le generate sentence](#configurer-openai-dans-le-generate-sentence)
+  - [Configurer AzureOpenAI dans le generate sentence](#configure-azureopenai-dans-le-generate-sentence)
   
 
 - [ Gen AI - Observability Settings](#gen-ai---observability-settings)
@@ -76,18 +76,17 @@ en revanche si le la plates-forme de lancement est bancale et que la fusée par 
 En se basant sur des modèles de fondation solides et éprouvés, les développeurs peuvent créer des applications qui utilisent l'IA de manière plus efficace et plus sûre.
 
 ## Gen AI - Sentence generation
-## Configuration
 
 Le menu **Gen AI**  > **Sentence Generation Settings** permet de configurer la fonctionnalité de génération de phrases d'entraînement pour les bots FAQ.
 
 > Pour accéder à cette page il faut bénéficier du rôle **_botUser_**.
 
-![Génération des phrases - Configuration](img/gen-ai-settings-sentence-generation.png "Ecran de configuration")
+![Génération des phrases - Configuration](img/sentence-generation-settings-page.png "Ecran de configuration")
 
 Pour activer la fonction de génération de phrases, vous devez choisir :
 
 **Un provider IA :**
-- Voir la [liste des fournisseurs d'IA](../providers/gen-ai-provider-llm-and-embedding.md)
+- Voir la [liste des fournisseurs d'IA](providers/gen-ai-provider-llm-and-embedding.md)
 
 
 **Une température :**
@@ -108,7 +107,7 @@ Pour activer la fonction de génération de phrases, vous devez choisir :
 
 
 ### Ollama
-Si vous avez bien suivi l'[étape 1](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_1) du codelab, Ollama est installé avec tinyOllama sur votre machine.
+Si vous avez bien suivi l'[étape 1](step_1.md) du codelab, Ollama est installé avec tinyOllama sur votre machine.
 
 Avec notre environnement Docker, Ollama doit etre accésible sur le réseau 0.0.0.0.
 
@@ -149,27 +148,31 @@ Vous devriez avoir ce rendu.
 
 ### Configurer Ollama dans le generate sentence
 
-Screenshot de config tock Generate sentence avec ollama.
+Pour connecter ollama à Tock studio, il vous faut renseigner l’accès à Ollama via cette url d’accès : http://ollama-server:11434 .
+Pour le modèle, là c’est à vous de renseigner le nom du modèle que vous utilisez dans ce CodeLab (ici nous avons tinyllama)
 
-### OpenAI
+<img src="img/llm-engine-ollama.png" alt="exemple de configuration avec Ollama">
+
+### Configurer OpenAI dans le generate sentence
+
 Si vous souhaitez utiliser openAI, vous devez vous inscrire sur la plateforme [OpenAI](https://platform.openai.com/docs/introduction)
 pour obtenir une clé d'API. Une fois cela fait rendez-vous à cette page [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) pour générer votre clé d'API.
 
 Dès que vous avez votre clé d'API, vous pouvez la renseigner dans le champ **API Key** et choisir le model (**Model name**) que vous souhaitez utiliser.
 Par exemple vous pourriez avoir ce genre de rendu.
 
-TODO crop le screenshot.
-<img src="img/rag-settings-example.png" alt="exemple de configuration avec openAI">
+<img src="img/llm-engine-openai.png" alt="exemple de configuration avec openAI">
 
-### AzureOpenAI
+### Configure AzureOpenAI dans le generate sentence
+
 Si vous souhaitez utiliser Azure OpenAI, vous devez vous inscrire sur la plateforme
 [Azure OpenAI](https://azure.microsoft.com/fr-fr/products/ai-services/openai-service) et d'avoir un compte profesionnel 
 afin d'avoir une clé d'API.
 Une fois cela fait, vous pouvez renseigner votre clé d'API dans le champ **API Key** et choisir le model (**Model name**)
 que vous souhaitez utiliser.
 
-TODO crop le screenshot.
-<img src="img/rag-settings-example-azure.png" alt="exemple de configuration avec Azure OpenAI">
+
+<img src="img/gen-ai-settings-sentence-generation.png" alt="exemple de configuration avec Azure OpenAI">
 
 # Gen AI - Observability Settings
 

@@ -97,7 +97,7 @@ docker run --rm -it \
     -e NO_PROXY="host.docker.internal,ollama-server,postgres-db,localhost" \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
     --add-host=host.docker.internal:host-gateway \
-    --add-host=ollama-server:192.168.20.41 \
+    --add-host=ollama-server:host-gateway \
     --add-host=postgres-db:host-gateway \
     tock/llm-indexing-tools:24.9.3 \
     /bin/bash
@@ -117,12 +117,12 @@ docker run --rm -it \
     -e NO_PROXY="host.docker.internal,ollama-server,postgres-db,localhost" \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
     --add-host=host.docker.internal:host-gateway \
-    --add-host=ollama-server:192.168.20.41 \
+    --add-host=ollama-server:host-gateway \
     --add-host=postgres-db:host-gateway \
     tock/llm-indexing-tools:24.9.3 \
     /bin/bash
 
-python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv devfest devfest data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
+python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv <NAMESPACE> <BOT-ID> data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
 ```
 
 

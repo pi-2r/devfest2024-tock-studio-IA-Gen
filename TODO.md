@@ -28,6 +28,7 @@ Ok pour moi rien a voir.
 ## Step 2_1 : Accélérons l'entrainement avec de l'IAGen
 Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout ce qui est lié au RAG arrive après néanmoins toutes les explication autour de LLM  / prompt / config Ollama / Open AI doivent rester. J'ai entamé le taff mais pas eu le temps de finir.
 * [X] Lnagfuse + toc studio OK
+* [ ] Screenshot à revoir voir les TODO
 
 ## Step 2_2
 * [ ] A faire

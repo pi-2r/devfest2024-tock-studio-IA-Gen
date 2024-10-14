@@ -168,7 +168,7 @@ Par exemple vous pourriez avoir ce genre de rendu.
 ### Configure AzureOpenAI dans le generate sentence
 
 Si vous souhaitez utiliser Azure OpenAI, vous devez vous inscrire sur la plateforme
-[Azure OpenAI](https://azure.microsoft.com/fr-fr/products/ai-services/openai-service) et d'avoir un compte profesionnel 
+[Azure OpenAI](https://azure.microsoft.com/fr-fr/products/ai-services/openai-service) et d'avoir un compte professionnel  
 afin d'avoir une clé d'API.
 Une fois cela fait, vous pouvez renseigner votre clé d'API dans le champ **API Key** et choisir le model (**Model name**)
 que vous souhaitez utiliser.

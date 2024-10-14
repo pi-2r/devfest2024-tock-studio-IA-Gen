@@ -16,6 +16,7 @@ Objectifs:
 - [Introduction](#introduction)
   - [Qu'est-ce que le LLM ?](#qu-est--ce-que-le-llm-?)  
 
+
 - [Gen AI - Sentence generation](#gen-ai---sentence-generation)
   - [Ollama](#Ollama)
       - [configuration sous Linux](#configuration-sous-linux)
@@ -42,7 +43,8 @@ Objectifs:
 - [Ressources](#ressources)
 
 ## Introduction
-Cette introduction à pour objectif d’expliquer la notion de LLM et du RAG.
+
+Cette introduction a pour objectif d’expliquer la notion de LLM.
 
 ## Qu'est-ce que le LLM
 Un modèle de langage à grande échelle (LLM, pour Large Language Model) est conçu pour comprendre et générer du texte en
@@ -188,6 +190,7 @@ Pour accéder à la plateforme Langfuse, rendez à l'adresse suivante http://loc
 Là vous allez devoir créer un accés, en cliquant sur le bouton **Sign Up** vous allez être redirigé vers la page de création de compte.
 
 <img src="img/langfuse-create-account.png" alt="creation de compte">
+
 Dans notre cas, nous allons utiliser le login **admin**, l'email **admin@app.com** et le mot de passe **password** (ces éléments sont donnés à titre d'exemple, vous pouvez utiliser les vôtres).
 Une fois que vous avez rempli les champs, cliquez sur le bouton **Sign Up**.
 

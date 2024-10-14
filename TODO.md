@@ -45,3 +45,4 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 * [X] explication Token + tokenisatioon
 * [ ] Finaliser explication context
 * [ ] mettre exmple de prompt avec tock studio (voir benjamin avec exemple issue de la WAX)
+* [ ] explication embedding vector

@@ -221,6 +221,15 @@ Une fois cela fait, cliquez sur le bouton **CREATE**.
 Dans ce projet et une fois toutes les étapes précédemment réalisées, vous pouvez ouvrir les 
 fichiers [index.html](index.html) depuis votre navigateur et commencer à dialoguer avec le bot.
 
+Si le fond d’écran animé vous gêne, vous pouvez commenter la ligne 36 qui contient l’élément suivant :
+
+```html
+const canvas = document.getElementById('matrix-bg');
+```
+
+<img src="img/no-matrix-background.png"  alt="comment-line-36">
+
+
 
 ## Ressources
 

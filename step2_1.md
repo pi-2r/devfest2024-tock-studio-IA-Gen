@@ -7,7 +7,7 @@ Objectifs:
 - Comprendre ce qu'est un LLM
 - Activer et configurer un LLM Engine
 - Lancer les 1ères générations de phrase pour entrainer plus rapidement le model
-- Découvrir une outil d'observabilité des LLM: Langfuse, créer une organisation et un projet pour obtenir les clés d’API
+- Découvrir un outil d'observabilité des LLM: Langfuse, créer une organisation et un projet pour obtenir les clés d’API
 - Brancher Tock Studio sur Langfuse pour observer les performances du modèle
 - Tester le rendu de génération de phrase et regarder le rendu dans langfuse
 

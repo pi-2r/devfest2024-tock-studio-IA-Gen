@@ -45,3 +45,5 @@ Dés lors, le RAG (Retrieving augmented Generation) est une méthode qui permet 
 
 => todo
 => Récu
+
+

@@ -11,6 +11,11 @@ Objectifs:
 ## Sommaire
 
 - [Qu'est-ce que le RAG ?](#qu-est--ce-que-le-rag-?)
+- Récupérer une base documentaire (via kaggle)
+- Découverte du tooling et du format
+  - Config d'emdedding
+- Conversion de la base documentaire dans le bon format avec la langage de votre choix (exemple python)
+- Ingestion avec le tooling (cli docker a donner)
 
 
 ## Qu'est-ce que le RAG
@@ -39,3 +44,4 @@ Dés lors, le RAG (Retrieving augmented Generation) est une méthode qui permet 
 
 
 => todo
+=> Récu

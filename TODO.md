@@ -19,6 +19,8 @@
 * [X] Make file plus besoin avec l'image de tooling python (et nécessite internet)
 * [x] Modification au retrait du make file car tout fait en 1 seules ligne de commande au step d'ingestion des données, plus besoin de build d'image car image de tooling
 * [X] Indiquer à chaque participant de bien créer un namespace tock avec son nom/prénom ou pseudo ? On pourrait lancer un PAD en début de codelab tout le monde y mets son nom / pseudo pour éviter les collision ça permettra de voir si on a des risques.
+* [ ] Création d'un namespace passer par namespace, bien le cocher puis bouton de création de l'app.
+* [ ] Récupérer le relative reste path et indiquer dans le step 2 de le coller sur page web.
 
 ## Step 2
 Ok pour moi rien a voir.

@@ -48,4 +48,4 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 * [X] explication embedding vector
 
 ### Step 6
-* [ ] Brancher le tock reactkit sur le bot
+* [X] Brancher le tock reactkit sur le bot avec explication

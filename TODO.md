@@ -11,7 +11,7 @@
 
 ## A voir avec Pierre
 
-* [ ] Mettre tout les steps sur une même branch avec step1.md .. ça va vite devenir galère pour s'y retrouver pour les participant de devoir switch de branch à chaque fois et pour nous pour la rédaction et les fichiers annexes.
+* [X] Mettre tout les steps sur une même branch avec step1.md .. ça va vite devenir galère pour s'y retrouver pour les participant de devoir switch de branch à chaque fois et pour nous pour la rédaction et les fichiers annexes.
 * --> j'ai mis à jours les branches et cleaner les dossiers inutiles(bot, .idea, pom.xml)
 
 ### Step 1
@@ -28,7 +28,7 @@ Ok pour moi rien a voir.
 ## Step 2_1 : Accélérons l'entrainement avec de l'IAGen
 Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout ce qui est lié au RAG arrive après néanmoins toutes les explication autour de LLM  / prompt / config Ollama / Open AI doivent rester. J'ai entamé le taff mais pas eu le temps de finir.
 * [X] Lnagfuse + toc studio OK
-* [ ] Screenshot à revoir voir les TODO
+* [X] Screenshot à revoir voir les TODO
 
 ## Step 2_2
 * [ ] @benjamin rédiger le step

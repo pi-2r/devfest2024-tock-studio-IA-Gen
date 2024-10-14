@@ -188,7 +188,7 @@ Pour se connecter, utilisez les identifiants suivants :
 
 <img src="img/tock-studio-step1.png"  alt="Tock-Studio-example">
 
-- A l'étape 1,**Choose your language** sélectionnez la langue **French** et cliquer sur le bouton **Next**.
+- A l'étape 1,**Choose your language** sélectionnez la langue **English** et cliquer sur le bouton **Next**.
 
 - A l'étape 2, **Select a first Channel**, choisissez **Web** et cliquez sur le bouton **Next**.
 

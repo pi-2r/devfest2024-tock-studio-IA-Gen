@@ -10,14 +10,14 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 ---
 
 - [Introduction: Tock](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_0)
-- [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_1)
-- [Entrainements du bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2)
-  - [Accélérons l'entrainement avec de l'IAGen](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2_1)
-  - [Préparons notre base documentaire](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_2_2)
-- [Activer l'IAGen dans notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_3)
-- [Faire dérailler notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_4)
-- [Reprendre le contrôle de notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_5)
-- [Connecter notre bot à notre boutique](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/step_6)
+- [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_1.md)
+- [Entrainements du bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_2.md)
+  - [Accélérons l'entrainement avec de l'IAGen](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step2_1.md)
+  - [Préparons notre base documentaire](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step2_2.md)
+- [Activer l'IAGen dans notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_3.md)
+- [Faire dérailler notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_4.md)
+- [Reprendre le contrôle de notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_5.md)
+- [Connecter notre bot à notre boutique](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_6.md)
 - [Remerciements](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/tree/thanks-you)
 
 ## Pour aller plus loin

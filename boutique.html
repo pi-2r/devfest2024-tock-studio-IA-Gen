@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalloweenShop - Votre boutique terrifiante</title>
+    <script
+            crossorigin
+            src="https://unpkg.com/tock-react-kit@latest/build/tock-react-kit-standalone.umd.js"
+    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/main.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <script src="https://doc.tock.ai/fr/assets/js/jquery.min.js"></script>
+
+
+    
+
+    <style>
+        @keyframes blood-tear {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            100% {
+                height: 150px;
+                opacity: 1;
+            }
+        }
+
+        .blood-tear {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #8B0000, #FF0000);
+            filter: drop-shadow(0 0 1px rgba(255, 0, 0, 0.5));
+            animation: blood-tear 4s ease-in-out infinite;
+            transform-origin: top center;
+        }
+
+        .blood-tear::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            width: 6px;
+            height: 6px;
+            background: #FF0000;
+            border-radius: 50%;
+        }
+
+
+        @keyframes blood-drip {
+            0% {
+                top: -100%;
+            }
+            100% {
+                top: 0;
+            }
+        }
+
+        @keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+@keyframes image-vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(5px, 5px); }
+    50% { transform: translate(-5px, -5px); }
+    75% { transform: translate(-5px, 5px); }
+    100% { transform: translate(5px, -5px); }
+}
+
+.vibrating-image {
+    animation: image-vibrate 0.1s linear infinite;
+}
+.vibrate {
+    animation: vibrate 0.3s linear;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.exploding {
+    animation: explode 0.5s forwards;
+}
+
+.gothic-font {
+    font-family: 'UnifrakturMaguntia', cursive;
+}
+
+#popup-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+#popup-image img {
+    max-width: 80%;
+    max-height: 80%;
+}
+        #chat-circle {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 30;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background: #efefef;
+            text-align: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            color: white;
+            padding: 28px;
+            cursor: pointer;
+            box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .btn#my-btn {
+            background: white;
+            padding-top: 13px;
+            padding-bottom: 12px;
+            border-radius: 45px;
+            padding-right: 40px;
+            padding-left: 40px;
+            color: #5865C3;
+        }
+
+        #chat-overlay {
+            background: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .chat-box {
+            z-index: 30;
+            display: none;
+            background: #efefef;
+            position: fixed;
+            right: 30px;
+            bottom: 50px;
+            width: 33vw;
+            max-width: 85vw;
+            max-height: 80vh;
+            border-radius: 20px;
+            /*   box-shadow: 0px 5px 35px 9px #464a92; */
+            box-shadow: 20px 20px 5px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-box-toggle {
+            float: right;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .chat-box-header {
+            background: #fcaa3e;
+            height: 70px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 17px;
+        }
+
+        .chat-box-body {
+            position: relative;
+            height: 370px;
+            height: auto;
+            /*border:1px solid #ccc;*/
+            overflow: hidden;
+        }
+
+        .chat-box-body:after {
+            content: "";
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAgOCkiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgY3g9IjE3NiIgY3k9IjEyIiByPSI0Ii8+PHBhdGggZD0iTTIwLjUuNWwyMyAxMW0tMjkgODRsLTMuNzkgMTAuMzc3TTI3LjAzNyAxMzEuNGw1Ljg5OCAyLjIwMy0zLjQ2IDUuOTQ3IDYuMDcyIDIuMzkyLTMuOTMzIDUuNzU4bTEyOC43MzMgMzUuMzdsLjY5My05LjMxNiAxMC4yOTIuMDUyLjQxNi05LjIyMiA5LjI3NC4zMzJNLjUgNDguNXM2LjEzMSA2LjQxMyA2Ljg0NyAxNC44MDVjLjcxNSA4LjM5My0yLjUyIDE0LjgwNi0yLjUyIDE0LjgwNk0xMjQuNTU1IDkwcy03LjQ0NCAwLTEzLjY3IDYuMTkyYy02LjIyNyA2LjE5Mi00LjgzOCAxMi4wMTItNC44MzggMTIuMDEybTIuMjQgNjguNjI2cy00LjAyNi05LjAyNS0xOC4xNDUtOS4wMjUtMTguMTQ1IDUuNy0xOC4xNDUgNS43IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg1LjcxNiAzNi4xNDZsNS4yNDMtOS41MjFoMTEuMDkzbDUuNDE2IDkuNTIxLTUuNDEgOS4xODVIOTAuOTUzbC01LjIzNy05LjE4NXptNjMuOTA5IDE1LjQ3OWgxMC43NXYxMC43NWgtMTAuNzV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjcxLjUiIGN5PSI3LjUiIHI9IjEuNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjE3MC41IiBjeT0iOTUuNSIgcj0iMS41Ii8+PGNpcmNsZSBmaWxsPSIjMDAwIiBjeD0iODEuNSIgY3k9IjEzNC41IiByPSIxLjUiLz48Y2lyY2xlIGZpbGw9IiMwMDAiIGN4PSIxMy41IiBjeT0iMjMuNSIgcj0iMS41Ii8+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTkzIDcxaDN2M2gtM3ptMzMgODRoM3YzaC0zem0tODUgMThoM3YzaC0zeiIvPjxwYXRoIGQ9Ik0zOS4zODQgNTEuMTIybDUuNzU4LTQuNDU0IDYuNDUzIDQuMjA1LTIuMjk0IDcuMzYzaC03Ljc5bC0yLjEyNy03LjExNHpNMTMwLjE5NSA0LjAzbDEzLjgzIDUuMDYyLTEwLjA5IDcuMDQ4LTMuNzQtMTIuMTF6bS04MyA5NWwxNC44MyA1LjQyOS0xMC44MiA3LjU1Ny00LjAxLTEyLjk4N3pNNS4yMTMgMTYxLjQ5NWwxMS4zMjggMjAuODk3TDIuMjY1IDE4MGwyLjk0OC0xOC41MDV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxwYXRoIGQ9Ik0xNDkuMDUgMTI3LjQ2OHMtLjUxIDIuMTgzLjk5NSAzLjM2NmMxLjU2IDEuMjI2IDguNjQyLTEuODk1IDMuOTY3LTcuNzg1LTIuMzY3LTIuNDc3LTYuNS0zLjIyNi05LjMzIDAtNS4yMDggNS45MzYgMCAxNy41MSAxMS42MSAxMy43MyAxMi40NTgtNi4yNTcgNS42MzMtMjEuNjU2LTUuMDczLTIyLjY1NC02LjYwMi0uNjA2LTE0LjA0MyAxLjc1Ni0xNi4xNTcgMTAuMjY4LTEuNzE4IDYuOTIgMS41ODQgMTcuMzg3IDEyLjQ1IDIwLjQ3NiAxMC44NjYgMy4wOSAxOS4zMzEtNC4zMSAxOS4zMzEtNC4zMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48L3N2Zz4=');
+            opacity: 0.1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #chat-input {
+            background: #f4f7f9;
+            width: 100%;
+            position: relative;
+            height: 47px;
+            padding-top: 10px;
+            padding-right: 50px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            border: none;
+            resize: none;
+            outline: none;
+            border: 1px solid #ccc;
+            color: #888;
+            border-top: none;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            overflow: hidden;
+        }
+
+        .chat-input > form {
+            margin-bottom: 0;
+        }
+
+        #chat-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #ccc;
+        }
+
+        #chat-input::-moz-placeholder { /* Firefox 19+ */
+            color: #ccc;
+        }
+
+        #chat-input:-ms-input-placeholder { /* IE 10+ */
+            color: #ccc;
+        }
+
+        #chat-input:-moz-placeholder { /* Firefox 18- */
+            color: #ccc;
+        }
+
+        .chat-submit {
+            position: absolute;
+            bottom: 3px;
+            right: 10px;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            border-radius: 50%;
+            color: #5A5EB9;
+            width: 35px;
+            height: 35px;
+        }
+
+        .chat-logs {
+            padding: 15px;
+            max-height: 50vh;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .chat-logs::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+        }
+
+        .chat-logs::-webkit-scrollbar {
+            width: 5px;
+            background-color: #F5F5F5;
+        }
+
+        .chat-logs::-webkit-scrollbar-thumb {
+            background-color: #5A5EB9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #ff6600;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            background-color: #333;
+            border: 1px solid #ff6600;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .price {
+            font-weight: bold;
+            color: #ff6600;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .btn {
+            background-color: #ff6600;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .add-to-cart {
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .add-to-cart.fade-out {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>HalloweenShop</h1>
+    <p>Votre boutique en ligne pour un Halloween terrifiant !</p>
+</header>
+<nav class="navbar">
+        <div class="container">
+            <div class="ms-auto">
+                <button id="cart-btn" class="btn btn-outline-dark position-relative">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        3
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+<!-- films d'horreur -->
+<div class="container">
+    <h2>Nos films d'horreur spécial Devfest 2024</h2>
+    <div class="products">
+        <div class="product">
+            <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUKqC0frfyJ-V4xdEO96lDkw2wtRbHqQQbgQ&s" alt="L'Exorciste" style="width: 180px;height: 267px;">
+            <h3>L'Exorciste</h3>
+            <p>Un classique de l'horreur qui vous glacera le sang !</p>
+            <p class="price">14,99 €</p>
+            <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+        </div>
+        <div class="product">
+            <img src="https://media.senscritique.com/media/000004845372/0/shining.jpg" alt="Shining" style="width: 180px;height: 267px;">
+            <h3>Shining</h3>
+            <p>Un chef-d'œuvre psychologique de Stanley Kubrick.</p>
+            <p class="price">12,99 €</p>
+            <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/81SevaMR6YL._AC_UF1000,1000_QL80_.jpg" alt="Halloween" style="width: 180px;height: 267px;">
+            <audio id="halloween-sound" src="css/.trickortreat/scream.mp3"></audio>
+            <h3>Halloween</h3>
+            <p>Le film culte qui a défini le genre slasher.</p>
+            <p class="price">11,99 €</p>
+            <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+        </div>
+        <!-- <audio autoplay loop> <source src="css/.trickortreat/Halloween.mp3" type="audio/mpeg"></audio> -->
+        <div class="product">
+            <img src="https://fr.web.img6.acsta.net/pictures/210/025/21002526_20130430172022533.jpg" alt="Conjuring" style="width: 180px;height: 267px;">
+            <h3>Conjuring</h3>
+            <p>Une histoire paranormale basée sur des faits réels.</p>
+            <p class="price">13,99 €</p>
+            <a href="#" class="btn add-to-cart">Ajouter au panier</a>
+        </div>
+    </div>
+</div>
+
+<!-- chatbot -->
+<div id="chat-circle" class="btn btn-raised">
+    <div id="chat-overlay"></div>
+    <img src="https://doc.tock.ai/fr/images/botchat.png"/>
+</div>
+
+<div class="chat-box">
+    <div class="chat-box-header">
+        Parlons un peu de Tock...
+        <span class="chat-box-toggle"><span class="icon fa-window-close"></span></span>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-box-overlay">
+        </div>
+
+        <div class="chat-logs">
+            <div id="chat"></div>
+            <div class="welcome">Bonjour je suis votre conseiller de la boutique HalloweenShop 😈<br>Une question ? Comment puis-je vous aider ?</div>
+        </div>
+    </div>
+</div>
+<div id="popup-image">
+        <img src="https://cdn-uploads.gameblog.fr/img/news/434828_64ba9fe61d25d.jpg" alt="Halloween Image">
+    </div>
+<footer>
+    <p>RAG against the Machine 😎🤖: créez votre propre bot IAGen sans Internet</p>
+</footer>
+<!-- Scripts -->
+<script src="https://doc.tock.ai/fr/assets/js/jquery.min.js"></script>
+<script>
+
+    TockReact.renderChat(document.getElementById('chat'), 'http://localhost:8080/io/app/devfest2024/web', '', {
+        palette: {
+            text: {
+                card: 'rgba(252,170,62,0.8	)',
+                bot: 'black',
+            },
+            background: {
+                card: 'white',
+                bot: 'rgba(252,170,62,0.34)',
+            },
+        },
+        sizing: {
+            loaderSize: '8px',
+            borderRadius: '8px',
+            conversation: {
+                //	width: '720px',
+            },
+        },
+        typography: {
+            fontFamily: '\'Source Sans Pro\', sans-serif',
+        },
+        overrides: {
+            card: {
+                cardContainer: 'width: 27vw;',
+            },
+            chatInput: {
+                icon: 'width: 3vw; height: 3vh;',
+            },
+        },
+    });
+
+    $(function () {
+        var INDEX = 0;
+        $("#chat-submit").click(function (e) {
+            e.preventDefault();
+            var msg = $("#chat-input").val();
+            if (msg.trim() == '') {
+                return false;
+            }
+            generate_message(msg, 'self');
+            var buttons = [
+                {
+                    name: 'Existing User',
+                    value: 'existing'
+                },
+                {
+                    name: 'New User',
+                    value: 'new'
+                }
+            ];
+            setTimeout(function () {
+                generate_message(msg, 'user');
+            }, 1000)
+
+        })
+
+        function generate_message(msg, type) {
+            INDEX++;
+            var str = "";
+            str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
+            str += "          <span class=\"msg-avatar\">";
+            str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+            str += "          <\/span>";
+            str += "          <div class=\"cm-msg-text\">";
+            str += msg;
+            str += "          <\/div>";
+            str += "        <\/div>";
+            $(".chat-logs").append(str);
+            $("#cm-msg-" + INDEX).hide().fadeIn(300);
+            if (type == 'self') {
+                $("#chat-input").val('');
+            }
+            $(".chat-logs").stop().animate({scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+        }
+
+        function generate_button_message(msg, buttons) {
+            INDEX++;
+            var btn_obj = buttons.map(function (button) {
+                return "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\"" + button.value + "\">" + button.name + "<\/a><\/li>";
+            }).join('');
+            var str = "";
+            str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg user\">";
+            str += "          <span class=\"msg-avatar\">";
+            str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+            str += "          <\/span>";
+            str += "          <div class=\"cm-msg-text\">";
+            str += msg;
+            str += "          <\/div>";
+            str += "          <div class=\"cm-msg-button\">";
+            str += "            <ul>";
+            str += btn_obj;
+            str += "            <\/ul>";
+            str += "          <\/div>";
+            str += "        <\/div>";
+            $(".chat-logs").append(str);
+            $("#cm-msg-" + INDEX).hide().fadeIn(300);
+            $(".chat-logs").stop().animate({scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+            $("#chat-input").attr("disabled", true);
+        }
+
+        $(document).delegate(".chat-btn", "click", function () {
+            var value = $(this).attr("chat-value");
+            var name = $(this).html();
+            $("#chat-input").attr("disabled", false);
+            generate_message(name, 'self');
+        })
+
+        $("#chat-circle").click(function () {
+            $("#chat-circle").toggle('scale');
+            $(".chat-box").toggle('scale');
+        })
+
+        $(".chat-box-toggle").click(function () {
+            $("#chat-circle").toggle('scale');
+            $(".chat-box").toggle('scale');
+        })
+
+    })
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.add-to-cart');
+
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.classList.add('fade-out');
+            });
+
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('fade-out');
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.product-image');
+
+        images.forEach(image => {
+            const originalSrc = image.src;
+            const hoverSrc = image.dataset.hoverSrc;
+
+            image.addEventListener('mouseenter', function() {
+                this.src = hoverSrc;
+            });
+
+            image.addEventListener('mouseleave', function() {
+                this.src = originalSrc;
+            });
+        });
+    });
+
+</script>
+<script>
+const cartBtn = document.getElementById('cart-btn');
+const cartBadge = cartBtn.querySelector('.badge');
+const popupImage = document.getElementById('popup-image');
+const productsContainer = document.querySelector('.products');
+const productImages = document.querySelectorAll('.product img');
+const productTitles = document.querySelectorAll('.product h3');
+const productDescriptions = document.querySelectorAll('.product p:not(.price)');
+const productPrices = document.querySelectorAll('.product .price');
+const halloweenSound = document.getElementById('halloween-sound');
+let clickCount = 0;
+let itemCount = 3;
+
+let bloodOverlay;
+
+function addBloodTears() {
+    const title = document.querySelector('header h1');
+    const titleRect = title.getBoundingClientRect();
+    const tearCount = 5; // Nombre de larmes
+
+    // Créer un conteneur pour les larmes
+    const tearContainer = document.createElement('div');
+    tearContainer.style.position = 'absolute';
+    tearContainer.style.top = `${titleRect.top}px`;
+    tearContainer.style.left = `${titleRect.left}px`;
+    tearContainer.style.width = `${titleRect.width}px`;
+    tearContainer.style.height = `${titleRect.height}px`;
+    tearContainer.style.overflow = 'visible';
+    tearContainer.style.pointerEvents = 'none';
+
+    document.body.appendChild(tearContainer);
+
+    for (let i = 0; i < tearCount; i++) {
+        const tear = document.createElement('div');
+        tear.classList.add('blood-tear');
+
+        // Positionner la larme aléatoirement le long du texte
+        const randomX = Math.random() * titleRect.width;
+        tear.style.left = `${randomX}px`;
+        tear.style.top = `${titleRect.height}px`;
+
+        // Ajouter un délai aléatoire pour le début de l'animation
+        tear.style.animationDelay = `${Math.random() * 2}s`;
+
+        tearContainer.appendChild(tear);
+    }
+}
+
+function removeBloodTears() {
+    const tearContainer = document.querySelector('div[style*="overflow: visible"]');
+    if (tearContainer) {
+        tearContainer.remove();
+    }
+}
+
+
+function vibrateProducts() {
+    productsContainer.classList.add('vibrate');
+    setTimeout(() => {
+        productsContainer.classList.remove('vibrate');
+    }, 300);
+}
+
+function changeProductImages() {
+    productImages.forEach(img => {
+        img.setAttribute('data-original-src', img.src);
+        img.src = 'https://images.unsplash.com/photo-1474432978580-3d2a63f706e9?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; // Replace with your dark image path
+    });
+}
+
+function changeToGothicFont() {
+    productTitles.forEach(title => title.classList.add('gothic-font'));
+    productDescriptions.forEach(desc => desc.classList.add('gothic-font'));
+    productPrices.forEach(price => price.classList.add('gothic-font'));
+}
+
+function explodeCart() {
+    cartBtn.classList.add('exploding');
+    setTimeout(() => {
+        cartBtn.style.display = 'none';
+        showPopupImage();
+    }, 500);
+}
+
+function showPopupImage() {
+    popupImage.style.display = 'flex';
+    popupImage.innerHTML = '<img src="https://cdn-uploads.gameblog.fr/img/news/434828_64ba9fe61d25d.jpg" alt="Halloween Image" class="vibrating-image">';
+    playHalloweenSound();
+}
+
+function playHalloweenSound() {
+    halloweenSound.currentTime = 0; // Réinitialise le son au début
+    halloweenSound.play();
+}
+
+function stopHalloweenSound() {
+    halloweenSound.pause();
+    halloweenSound.currentTime = 0;
+}
+
+function restoreOriginalState() {
+    productImages.forEach(img => img.src = img.getAttribute('data-original-src'));
+    productTitles.forEach(title => title.classList.remove('gothic-font'));
+    productDescriptions.forEach(desc => desc.classList.remove('gothic-font'));
+    productPrices.forEach(price => price.classList.remove('gothic-font'));
+}
+
+cartBtn.addEventListener('click', () => {
+    clickCount++;
+    itemCount += Math.floor(Math.random() * (1000 - 200 + 1)) + 200;
+    cartBadge.textContent = itemCount;
+    
+    if (clickCount === 1) {
+        vibrateProducts();
+    } else if (clickCount === 2) {
+        vibrateProducts();
+        changeProductImages();
+        changeToGothicFont();
+        addBloodTears(); // Ajout de l'effet de larmes de sang
+    } else if (clickCount === 3) {
+        removeBloodTears(); // Suppression de l'effet de larmes de sang
+        explodeCart();
+        setTimeout(() => {
+        popupImage.style.display = 'none';
+        popupImage.innerHTML = '';
+        stopHalloweenSound(); // Arrête le son
+        cartBtn.classList.remove('exploding');
+        cartBtn.style.display = 'block';
+        clickCount = 0;
+        itemCount = 3;
+        cartBadge.textContent = itemCount;
+        restoreOriginalState();
+        }, 2800);
+        //removeBloodEffect(); // Suppression de l'effet de sang
+    }
+});
+</script>
+
+</body>
+</html>

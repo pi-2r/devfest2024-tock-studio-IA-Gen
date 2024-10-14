@@ -79,9 +79,9 @@ En se basant sur des modèles de fondation solides et éprouvés, les développe
 
 ## Gen AI - Sentence generation
 
-Le menu **Gen AI**  > **Sentence Generation Settings** permet de configurer la fonctionnalité de génération de phrases d'entraînement pour les bots FAQ.
+Le menu **Gen AI** > **Sentence Generation Settings** permet de configurer la fonctionnalité de génération de phrases d'entraînement pour les bots FAQ.
 
-> Pour accéder à cette page il faut bénéficier du rôle **_botUser_**.
+> Pour accéder à cette page, il faut bénéficier du rôle **_botUser_**.
 
 ![Génération des phrases - Configuration](img/sentence-generation-settings-page.png "Ecran de configuration")
 
@@ -109,16 +109,17 @@ Pour activer la fonction de génération de phrases, vous devez choisir :
 
 
 ### Ollama
+
 Si vous avez bien suivi l'[étape 1](step_1.md) du codelab, Ollama est installé avec tinyOllama sur votre machine.
 
-Avec notre environnement Docker, Ollama doit etre accésible sur le réseau 0.0.0.0.
+Avec notre environnement Docker, Ollama doit etre accessible sur le réseau 0.0.0.0.
 
 ### Configuration sous Linux
 
 Si vous êtes sur Linux, nous vous invitons à suivre ces étapes.
 
 Pour exposer ollama à toutes les adresses IP, il faut aller modifier le fichier /etc/systemd/system/ollama.service.
-Changer les lignes suivantes:    
+Changer les lignes suivantes :    
 ```markdown
 [Service]
 ExecStart=/usr/local/bin/ollama serve
@@ -219,7 +220,7 @@ clés d’api de votre projet. La liste étant vide, il faut cliquer sur le bout
 
 <img src="img/langfuse-create-api-keys.png" alt="liste api keys">
 
-Dès lors vous allez voir apparaitre une pop-up qui contient les listes d’API-key, comme dans l’exemple suivant :
+Dès lors, vous allez voir apparaitre une pop-up qui contient les listes d’API-key, comme dans l’exemple suivant :
 
 <img src="img/langfuse-new-api-keys.png" alt="nouvelle api key">
 
@@ -245,12 +246,12 @@ Pour l'url d'accès à Langfuse vous devez renseigner cette url: http://langfuse
 
 ## Générer des phrases d'entraînement
 Pour tester si Langfuse est bien connecté avec Tock Studio, allez dans **Stories & Answers** > **FAQs stories**. 
-Là vous allez cliquer sur **+ NEW FAQ STORY**.
+Là, vous allez cliquer sur **+ NEW FAQ STORY**.
 
 <img src="img/new-faq-with-IA.png" alt="new faq story">
 
 Dans l’onglet **QUESTION** et dans le champ comportant le même champ.
-Pour l’exemple nous avons cette phrase « bonjour le bot » que nous ajoutons comme question en appuyant sur le **+**.
+Pour l’exemple, nous avons cette phrase « bonjour le bot » que nous ajoutons comme question en appuyant sur le **+**.
 
 <img src="img/add-question-faq-stories-with-ai.png" alt="add question">
 
@@ -262,7 +263,7 @@ Cela va ouvrir une pop-up comme celle-ci vous permettant de générer des mots o
 
 <img src="img/pop-up-generate-sentence.png" alt="generate sentence">
 
-Là vous allez choisir votre phrase que vous avez renseigné juste avant puis choisir les éléments de langages que vous 
+Là, vous allez choisir votre phrase que vous avez renseigné juste avant puis choisir les éléments de langages que vous 
 souhaitez générer. Une fois cela fait, cliquer sur **GENERATE**
 
 <img src="img/pop-up-generate-sentence-last-step.png" alt="generate sentence">
@@ -272,7 +273,7 @@ Aprés quelques secondes vous devriez avoir ce genre de rendu.
 <img src="img/result-generat-sentence-ai.png" alt="resultat gen ai">
 
 Vous pouvez tout sélectionner puis valider, chose qui vous ramènera à la page de la FAQ. 
-Là vous pourrez voir que les questions générer par l’IA ont été importées.
+Là, vous pourrez voir que les questions générer par l’IA ont été importées.
 
 <img src="img/import-gen-ai-sentence.png" alt="import sentence">
 
@@ -284,11 +285,11 @@ Maintenant allez sur tableau de bord de Langfuse (http://localhost:3000/) pour v
 
 <img src="img/langfuse-dashboard.png" alt="langfuse dashboard">
 
-Dans le menu à gauche allez dans **Tracing** > **Traces** pour arriver sur ce tableau.
+Dans le menu de gauche, allez dans **Tracing** > **Traces** pour arriver sur ce tableau.
 
 <img src="img/langfuse-tracing.png" alt="langfuse tracing">
 
-Là vous allez choisir l’élément dont le nom contient **Sentence Generation**, cliquer sur l’**ID**de ce même élément 
+Là, vous allez choisir l’élément dont le nom contient **Sentence Generation**, cliquer sur l’**ID**de ce même élément 
 et vous pourrez voir les détails de la génération de phrases ou de mots de cette action.
 
 <img src="img/langfuse-tracing-details.png" alt="langfuse tracing details">

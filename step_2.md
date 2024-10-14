@@ -49,10 +49,10 @@ connecteur web, un API Rest (cf architecture ci-dessous).
 
 Vous trouverez l'URL du connecteur web de votre bot dans le Studio : **Settings** > **Configurations** > déplier le connecteur web > Relative REST path.
 
-Adapter l'url `http://localhost:8080/io/app/devfest20204/web` dans le code au niveau suivant :
+Adapter l'url `http://localhost:8080/io/app/devfest2024/web` dans le code au niveau suivant :
 ```html
 <script>
-    TockReact.renderChat(document.getElementById('chat'), 'http://localhost:8080/io/app/devfest20204/web', '', {}, { disableSse: true });
+    TockReact.renderChat(document.getElementById('chat'), 'http://localhost:8080/io/app/devfest2024/web', '', {}, { disableSse: true });
     //....
 </script>
 ```
@@ -87,7 +87,7 @@ Vous pouvez donner un nom à votre story, par exemple **greetings**, dans la par
 cette phrase :
 
 ```
-Bonjour le defvest 2024,
+Bonjour le Devfest 2024,
 Vous êtes au codelab:  RAG against the Machine 😎🤖: créez votre propre bot IAGen sans Internet
 ```
 

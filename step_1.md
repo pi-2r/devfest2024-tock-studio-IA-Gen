@@ -105,15 +105,12 @@ ollama run nomic-embed-text
 Installation trop lente ? ça rame .... pas de soucis vous allez pouvoir utiliser le serveur Ollama présent sur **http://gpu-server.lan:11434**.
 N'installez pas Ollama passez à la suite.
 
-
 ## Lancer l'environnement avec Docker
 
 Vous allez monter un environnement Tock sur Docker. Il y a un dossier nomé **docker**, qui contient un fichier 
 docker-compose avec tous les éléments dont vous avez besoin pour ce codelab.
 
 >Note : ce fichier docker-compose est inspiré du répertoire github : https://github.com/theopenconversationkit/tock-docker.git
-
-Depuis la racine de ce dossier, appliquez ces 3 commandes :
 
 Pour éviter une congestion du réseau nous avons mis les images dans une registry docker local présente sur http://gpu-server:5000/ et configurée dans `docker/.env`. Cette registry n'étant pas en HTTPS vous devez préalablement l'autoriser en tant que registry insecure.
 
@@ -131,6 +128,8 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 Depuis docker desktop aller dans les paramètres puis Docker Engine et éditer la configuration json de la même manière que sous linux.
 
 ### Lancement de la stack
+
+Depuis la racine de ce dossier, appliquez ces 3 commandes :
 
 ```bash
 cd docker

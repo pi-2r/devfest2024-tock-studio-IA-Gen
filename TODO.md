@@ -31,10 +31,11 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 * [ ] Screenshot à revoir voir les TODO
 
 ## Step 2_2
-* [ ] A faire
+* [ ] @benjamin rédiger le step
 
 ### Step 3
-* [ ] A faire
+* [ ] Image a reprendre d'un step avant
+* [ ] Ajouter la config d'embedding + envoyer un message qui déclanche le RAG pour tester
 
 ### Step 4
 * [X] modification image pour matrix ok

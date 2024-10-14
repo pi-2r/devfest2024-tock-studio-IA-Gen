@@ -32,6 +32,8 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 
 ## Step 2_2
 * [ ] @benjamin rédiger le step
+* [ ] Héberger le dataset sur la machine GPU.
+* [ ] Revoir IP dans extra host ...
 
 ### Step 3
 * [ ] Image a reprendre d'un step avant

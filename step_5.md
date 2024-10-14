@@ -49,7 +49,7 @@
 
 
 - [Ressources](#ressources)
-
+- [Étape suivante](#étape-suivante)
 
 ## Introduction
 
@@ -326,3 +326,8 @@ C'est maintenant à vous de jouer, pour affiner le prompt de votre bot, en suiva
 | What are tokens and how to count them?                                                   | https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them |
 | Tokenizers                                                                               | https://huggingface.co/transformers/tokenizer_summary.html |
 | Que sont les transformateurs dans le domaine de l'intelligence artificielle ?            | https://aws.amazon.com/fr/what-is/transformers-in-artificial-intelligence/ |
+
+
+## Étape suivante
+
+- [Étape 6](step_6.md)

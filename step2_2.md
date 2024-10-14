@@ -16,7 +16,7 @@ Objectifs:
 - Découverte du tooling et du format
   - Config d'emdedding
 - Ingestion avec le tooling (cli docker a donner)
-
+- [Étape suivante](#étape-suivante)
 
 ## Qu'est-ce que le RAG
 <img src="img/rag.png" alt="RAG">
@@ -124,3 +124,8 @@ docker run --rm -it \
 
 python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv devfest devfest data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
 ```
+
+
+## Étape suivante
+
+- [Étape 3](step_3.md)

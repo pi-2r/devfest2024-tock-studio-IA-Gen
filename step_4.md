@@ -16,6 +16,8 @@
 
 - [Lui faire changer de personnalité](#lui-faire-changer-de-personnalité)
 - [Autre exemple](#autre-exemple)
+- [Ressources](#ressources)
+- [Étape suivante](#étape-suivante)
 
 ## Lui faire changer de personnalité
 
@@ -54,3 +56,8 @@ Par exemple :
 | ChatGPT Jailbreak Prompts: How to Unchain ChatGPT      | [https://docs.kanaries.net/articles/chatgpt-jailbreak-prompt](https://docs.kanaries.net/articles/chatgpt-jailbreak-prompt) |
 | ChatGPT jailbreak                                      | [https://www.lebigdata.fr/chatgpt-dan](https://www.lebigdata.fr/chatgpt-dan) |
 | How to Jailbreak ChatGPT 4 in 2024 (Prompt + Examples) | [https://weam.ai/blog/guide/jailbreak-chatgpt/](https://weam.ai/blog/guide/jailbreak-chatgpt/) |
+
+
+## Étape suivante
+
+- [Étape 5](step_5.md)

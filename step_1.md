@@ -33,6 +33,7 @@
 - [Interroger le bot](#interroger-le-bot)
 - [Ressources](#ressources)
 - [En attendant la suite du Codelab...](#en-attendant-la-suite-du-codelab)
+- [Étape suivante](#étape-suivante)
 
 ## Le réseau de l'atelier
 
@@ -246,6 +247,11 @@ const canvas = document.getElementById('matrix-bg');
 ## En attendant la suite du Codelab...
 
 [<img src="img/red-blue-pills.png"  alt="red-blue-pills">](https://www.youtube.com/watch?v=bNWY5Bd_KOA)
+
+## Étape suivante
+
+- [Étape 2](step_2.md)
+
 
 
 

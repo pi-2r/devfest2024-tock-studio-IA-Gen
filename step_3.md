@@ -9,6 +9,8 @@
 - [Gen AI / RAG Settings](#gen-ai--rag-settings)
   - [Configuration](#configuration)
   - [Activation du RAG & Configuration du LLM Engine]
+- [Étape suivante](#étape-suivante)
+
 
 ## Gen AI / RAG Settings
 ## Configuration
@@ -47,3 +49,8 @@ Cette fonctionnalité permettra à TOCK de générer une réponse à une requêt
 <img src="img/prompt.png" alt="prompt">
 
 - Le prompt est le script qui détermine la personnalité du Bot, le contexte dans lequel il doit répondre, la façon dont il doit s’adresser à l’utilisateur, les recommandations ou instructions de réponses, les styles et formats de réponses.
+
+
+## Étape suivante
+
+- [Étape 4](step_4.md)

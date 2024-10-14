@@ -41,6 +41,7 @@ Objectifs:
 
 
 - [Ressources](#ressources)
+- [Étape suivante](#étape-suivante)
 
 ## Introduction
 
@@ -308,3 +309,8 @@ et vous pourrez voir les détails de la génération de phrases ou de mots de ce
 | An Evaluation of Vector Database Systems: Features, and Use Cases                      | [https://blog.devgenius.io/an-evaluation-of-vector-database-systems-features-and-use-cases-9a90b05eb51f](https://blog.devgenius.io/an-evaluation-of-vector-database-systems-features-and-use-cases-9a90b05eb51f)   | 
 | Awesome Foundation Models                                                              | [https://github.com/uncbiag/Awesome-Foundation-Models?tab=readme-ov-file](https://github.com/uncbiag/Awesome-Foundation-Models?tab=readme-ov-file)                                                                                               | 
 | Que sont les modèles de fondation ?                                                    | [https://aws.amazon.com/what-is/foundation-models/](https://aws.amazon.com/what-is/foundation-models/)                                                                                                       |
+
+
+## Étape suivante
+
+- [Étape 2_2](step2_2.md)

@@ -16,3 +16,8 @@
 >
 >Le bot était alors capable de saisir la gare de départ, la destination et le moment souhaité pour le voyage, offrant ainsi des réponses pertinentes et adaptées à l'utilisateur.
 
+
+
+## Étape suivante
+
+- [Étape 1](step_1.md)

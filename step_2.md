@@ -21,6 +21,7 @@
 - [Créer une story](#créer-une-story)
 - [Les premieres phases de qualifications](#les-premieres-phases-de-qualifications)
 - [Ressources](#ressources)
+- [Étape suivante](#étape-suivante)
 
 ## Aperçu de l'interface Tock Studio
 
@@ -117,9 +118,17 @@ Par exemple, **Bonjour**, **Salut**, **Hello**.
 >Note : si vous souhaitez retrouver les exemples de phrases que vous avez donné à votre bot, vous pouvez aller dans 
 > la partie **Language Understanding** > **Search sentences**.
 
+
+
+
 ## Ressources
 
 | Information                              | Lien |
 |------------------------------------------|------|
 | Tock Studio                              | [https://doc.tock.ai/tock/](https://doc.tock.ai/tock/) |
 | NLP (Traitement automatique des langues) | [https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues](https://fr.wikipedia.org/wiki/Traitement_automatique_des_langues) |
+
+
+## Étape suivante
+
+[Étape 2_1](step2_1.md)

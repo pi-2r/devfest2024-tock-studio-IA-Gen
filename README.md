@@ -9,17 +9,17 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 
 ---
 
-- [Introduction: Tock](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_0.md)
-- [Mise en place de l'environnement](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_1.md)
-- [Entrainements du bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_2.md)
-  - [Accélérons l'entrainement avec de l'IAGen](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step2_1.md)
-  - [Préparons notre base documentaire](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step2_2.md)
-- [Activer l'IAGen dans notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_3.md)
-- [Faire dérailler notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_4.md)
-- [Reprendre le contrôle de notre bot](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_5.md)
-- [Connecter notre bot à notre boutique](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/step_6.md)
-- [Remerciements](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/thanks-you.md)
+- [Introduction: Tock](step_0.md)
+- [Mise en place de l'environnement](step_1.md)
+- [Entrainements du bot](step_2.md)
+  - [Accélérons l'entrainement avec de l'IAGen](step2_1.md)
+  - [Préparons notre base documentaire](step2_2.md)
+- [Activer l'IAGen dans notre bot](step_3.md)
+- [Faire dérailler notre bot](step_4.md)
+- [Reprendre le contrôle de notre bot](step_5.md)
+- [Connecter notre bot à notre boutique](step_6.md)
+- [Remerciements](thanks-you.md)
 
 ## Pour aller plus loin
-- [Liste de ressources](https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen/blob/main/resources.md)
+- [Liste de ressources](resources.md)
 

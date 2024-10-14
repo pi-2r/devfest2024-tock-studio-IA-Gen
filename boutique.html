@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="css/main.css"/>
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <script src="https://doc.tock.ai/fr/assets/js/jquery.min.js"></script>
-
+    <script>
+        // Configuration de l'URL d'accès au bot
+        var tockApiUrl = "HTTPS_BOT_URL";
+    </script>
 
     
 
@@ -450,7 +453,7 @@
 <script src="https://doc.tock.ai/fr/assets/js/jquery.min.js"></script>
 <script>
 
-    TockReact.renderChat(document.getElementById('chat'), 'http://localhost:8080/io/app/devfest2024/web', '', {
+    TockReact.renderChat(document.getElementById('chat'), tockApiUrl, '', {
         palette: {
             text: {
                 card: 'rgba(252,170,62,0.8	)',

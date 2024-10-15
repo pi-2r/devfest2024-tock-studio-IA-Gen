@@ -141,8 +141,12 @@ Copier cet identifiant pour le coller dans le champ **Indexing session id**.
 Dans l’intitulé **Conversation flow** et dans le champ **No answer sentence**, vous devez spécifier une phrase lorsque l’IA n’est pas capable de répondre.
 Par la même occasion, vous pouvez aussi rediriger vers une story spécifique dans le champ **Unanswered story redirection**
 
+Par exemple si on met à jour les différents éléments et que vous sauvegardez en cliquant en haut sur le bouton bleu 
+**SAVE**, vous devriez voir apparaitre une bannière verte signifiant que tout est correcte.
 
-Une fois que vous avez configuré les différents paramètres, vous pouvez activer le RAG en cliquant sur le bouton **Save**.
+<img src="img/rag-settings-success.png" alt="rag settings final">
+
+
 ## Étape suivante
 
 - [Étape 6](step_6.md)

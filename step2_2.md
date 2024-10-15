@@ -72,6 +72,10 @@ Voici un script python qui convertie la dataset donnée en exemple dans ce forma
 
 Ce script est présent dans [data/scripts/transform_horror_movie.py](./data/scripts/transform_horror_movie.py), nous vous proposons une image docker de tooling pour l'exécuter plus bas.
 
+
+Ce script est volontairement simplifié nous vous invitons à le lire / adapter aux besoins en fonction de votre dataset.
+A noter que la colonne "source" peut-être laisée vide si vous n'avez pas de version en ligne du document.
+
 ```python
 import pandas as pd
 
@@ -122,7 +126,24 @@ cat data/documents_csv/filtered_horror_movies.csv
 
 ## Ingestion avec le tooling
 
+Maintenant que nous avons nos données dans le bon format il est nécessaire de les ingérer dans notre base documentaire. TOCK est compatible avec [OpenSearch](https://github.com/theopenconversationkit/tock-docker/blob/master/docker-compose-rag-opensearch.yml) et PGVector (utilisé dans ce codelab).
+
+L'ingestion consite globalement en 2 grandes étapes :
+* Découper les données en chunk de manière à maitriser la taille du contexte documentaire qui sera fourni au LLM
+* Vectoriser chacun des chunks à l'aide d'un modèle d'embedding, pour pouvoir chercher les bons morceaux à terme avec la requête utilisateur qui sera elle même vectorisée à l'aide du même modèle.
+
 ### Configuration d'embedding
+
+Vous l'avez compris nous avons besoin d'un modèle qui depuis un texte (description d'un film), nous sort un vecteur qui représente ce texte. Nous allons utiliser le modèle [nomic-embed-text](https://ollama.com/library/nomic-embed-text), vous pouvez retrouver d'autres [modèles d'embedding compatible ollama ici](https://ollama.com/search?&c=embedding).
+
+Cette vectorisation intervient à 2 endroit, pour ingérer la base documentaire (configuré à l'aide d'un fichier json fourni au script d'ingestion) et pour donner une représentation de chaque requête utilisateur (ceci sera configuré via les RAG Settings de doc).
+
+#### Configuration avec ollama
+
+La configuration est sous format json :
+TODO
+
+#### Configuration avec openai ou Azure OpenAI
 
 TODO
 

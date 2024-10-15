@@ -11,7 +11,7 @@ df_sampled = df.sample(n=n, random_state=42)  # random_state ensures reproducibi
 
 # Keep only the specified columns
 columns_to_keep = ['id', 'title', 'overview']
-df_filtered = df_sampled[columns_to_keep]
+df_filtered = df_sampled.loc[:, columns_to_keep]
 
 # Map id column to URLs
 df_filtered['id'] = df_filtered['id'].map(lambda x: f"https://www.themoviedb.org/movie/{x}")

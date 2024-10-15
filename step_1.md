@@ -253,8 +253,14 @@ Une fois cela fait, cliquez sur le bouton **CREATE**.
 
 ## Interroger le bot
 
-Dans ce projet et une fois toutes les étapes précédemment réalisées, vous pouvez ouvrir les 
-fichiers [index.html](index.html) depuis votre navigateur et commencer à dialoguer avec le bot.
+Dans ce projet et une fois toutes les étapes précédemment réalisées, vous pouvez ouvrir depuis votre navigateur (CTRL + O, ouvrir le fichier de ce repo cloné) et commencer à dialoguer avec le bot au choix :
+* Page web intégrant le Tock React Kit [index.html](index.html)
+* Page web intégrant le Tock Vue Kit [index-tvk.html](index-tvk.html)
+
+Vous devez ensuite si nécessaire ajuster l'URL dite du Bot API, il s'agit du l'API Rest servant de point d'entrée à la réception des message des divers connecteurs dont le connecteur web, le format de l'URL est le suivant : `http://localhost:8080/io/<NAMESPACE>/<BOTID>/web`. Si vous utilisez la stack TOCK du CODELAB (pas en local / docker), utilisez cette URL `http://tock.lan:8080/io/<NAMESPACE>/<BOTID>/web`.
+
+Vous trouverez votre `<NAMESPACE>` et `<BOTID>` dans le menu Config > Application :
+![Application et namespace](./img/find_ns_app_bot_id_studio.png)
 
 > Note : 
 > 

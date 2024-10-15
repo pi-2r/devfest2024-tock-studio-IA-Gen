@@ -4,6 +4,14 @@
 
 > "Okay, you have some skill.", The Matrix Reloaded, Les Wachowski, 2003
 
+<br/>
+<u>Objectifs:</u>
+
+- Configurer les paramètres de l'IA générative
+- Activer l'IA générative dans Tock Studio
+- Interroger le bot
+
+
 ## Sommaire
 
 - [Gen AI / RAG Settings](#gen-ai--rag-settings)

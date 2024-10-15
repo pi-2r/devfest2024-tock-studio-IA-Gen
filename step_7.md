@@ -20,8 +20,8 @@
 ## Sommaire
 
 - [Introduction](#introduction)
-  - [Qu'est-ce qu'un prompt?](#qu'est-ce-qu'un-prompt?)
-  - [Les Tokens l'alphabet du LLM](#les-tokens-l'alphabet-du-llm)
+  - [Qu'est-ce qu'un prompt?](#quest-ce-quun-prompt)
+  - [Les Tokens, l'alphabet du LLM](#les-tokens-lalphabet-du-llm)
   - [Les Tokenizers, un outil de découpage de texte](#les-tokenizers-un-outil-de-découpage-de-texte)
   - [Token et Tokenizers](#token-et-tokenizers)
   - [Vecteurs d'embedding](#vecteurs-d'embedding)

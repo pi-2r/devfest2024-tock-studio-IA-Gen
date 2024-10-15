@@ -17,9 +17,13 @@
 ## Sommaire
 
 - [Aperçu de l'interface Tock Studio](#aperçu-de-linterface-tock-studio)
+
+
 - [Discuter avec bot](#discuter-avec-bot)
 - [Créer une story](#créer-une-story)
 - [Les premieres phases de qualifications](#les-premieres-phases-de-qualifications)
+
+
 - [Ressources](#ressources)
 - [Étape suivante](#étape-suivante)
 

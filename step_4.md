@@ -3,19 +3,30 @@
 
 > "Morpheus is fighting Neo", The matrix, Les Wachowski, 1999
 
-Objectifs:
+<br/>
+<u>Objectifs:</u>
+
 - Comprendre comment nous allons faire rentrer une base documentaire dans le bot, concept du Retrieval Augmented Generation
 - Récupérer un ensemble documentaire, le transformer dans le bon format
 - Utiliser les tool d'ingestion pour le vectoriser et charger dans la base documentaire de notre bot
 
 ## Sommaire
 
-- [Qu'est-ce que le RAG ?](#qu-est--ce-que-le-rag-?)
-- Récupérer une base documentaire (via kaggle)
-- Conversion de la base documentaire dans le bon format avec la langage de votre choix (exemple python)
-- Découverte du tooling et du format
-  - Config d'emdedding
-- Ingestion avec le tooling (cli docker a donner)
+- [Qu'est-ce que le RAG ?](#quest-ce-que-le-rag)
+
+  
+- [Trouver un data set sur kaggle](#trouver-un-data-set-sur-kaggle)
+- [Découverte du tooling et du format](#découverte-du-tooling-et-du-format)
+  - [Exemple de script python utilisant Panda](#exemple-de-script-python-utilisant-panda)
+  
+
+- [Ingestion avec le tooling](#ingestion-avec-le-tooling)
+  - [Configuration d'embedding](#configuration-d-embedding)
+    - [Configuration avec ollama](#configuration-avec-ollama)
+    - [Configuration avec OpenAI ou Azure OpenAI](#configuration-avec-openai-ou-azure-openai)
+  - - [Lancer l'ingestion](#lancer-lingestion)
+
+
 - [Étape suivante](#étape-suivante)
 
 ## Qu'est-ce que le RAG
@@ -31,7 +42,7 @@ pages de chaque livre pour les placer dans un coin des différentes piéces de v
 
 Maintenant, c'est un programme informatique qui va lire les livres, extraire les idées des pages pour les placer non pas 
 dans un coin de votre domicile mais dans une base de données dite vectorielle.
-L'extraction d'information utilise une techniques de découpage (embedding) pour placer les idées dans la base de 
+L'extraction d'information utilise une technique de découpage (embedding) pour placer les idées dans la base de 
 données vectorielle (une base de données avec des coins).
 
 Plus les idées sont proches, plus elles sont proches dans la base de données vectorielle.

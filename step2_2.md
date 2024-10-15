@@ -175,6 +175,7 @@ python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_ho
 Résultat
 
 <img src="img/python-ingestion-result.png" alt="resultat">
+
 ## Étape suivante
 
 - [Étape 3](step_3.md)

@@ -60,6 +60,18 @@ docker -v
 
 Docker doit aussi être fonctionnel sur votre machine.
 
+## Configuration globale de l'environnement
+
+Dans le cadre de ce codelab vous allez ou pas utiliser certains composants en local ou ceux mis à votre disposition en cas de difficultés.
+Tout est configuré dans le fichier `docker/.env` :
+```bash
+cp docker/template.env docker/.env
+# Pour sourcer les variable dans un terminal
+source docker/.env
+```
+
+Ce fichier documente toutes les configurations dans la suite du tutoriel vous aurez peut-être besoin d'en modifier si un composants ne marche pas chez vous. Celà sera indiqué dans la suite du tutoriel.
+
 
 ## Installer Ollama
 
@@ -106,6 +118,14 @@ ollama run nomic-embed-text
 Installation trop lente ? ça rame .... pas de soucis vous allez pouvoir utiliser le serveur Ollama présent sur **http://gpu-server.lan:11434**.
 N'installez pas Ollama passez à la suite.
 
+Modifiez dans le fichier `docker/.env` les lignes suivantes pour utiliser le serveur ollama du codelab :
+```bash
+# Ollama (requires RAM and works better with a GPU)
+#   export OLLAMA_SERVER=host-gateway # LOCAL ollama server
+#   export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan, unfornately docker compose needs an IP addr
+export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan, unfornately docker compose needs an IP addr
+```
+
 ## Lancer l'environnement avec Docker
 
 Vous allez monter un environnement Tock sur Docker. Il y a un dossier nomé **docker**, qui contient un fichier 
@@ -117,7 +137,7 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 
 ### Autorisation de la registry locale insecure
 
-### Sous linux
+#### Sous linux
 Éditer le fichier `/etc/docker/daemon.json` :
 ```json
 {
@@ -125,7 +145,7 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 }
 ```
 
-### Sous MacOS / Windows
+#### Sous MacOS / Windows
 Depuis docker desktop aller dans les paramètres puis Docker Engine et éditer la configuration json de la même manière que sous linux.
 
 ### Lancement de la stack
@@ -168,10 +188,24 @@ Pas de soucis nous mettons à disposition sur le réseau du codelab une stack co
 
 Pour accéder au tock studio sur cette stack allez sur : http://tock.lan
 
+Modifiez votre fichier `docker/.env`, lignes suivantes :
+```bash
+# PostgresDB
+#   export POSTGRES_DB_SERVER=host-gateway # LOCAL tock stack
+#   export POSTGRES_DB_SERVER=192.168.20.3 # OUR CODELAB, remote tock stack at tock.lan, unfornately docker compose needs an IP addr
+export POSTGRES_DB_SERVER=192.168.20.3 # OUR CODELAB, remote tock stack at tock.lan, unfornately docker compose needs an IP addr
+```
+
+N'hésitez pas à arrêter la stack docker et supprimer les ressources créés :
+```bash
+cd docker
+docker compose -p devfest_tock down -v
+```
+
  
 ### Accéder à l'espace admin
 
-Pour accéder à l'espace admin, ouvrez votre navigateur et tapez l'adresse suivante : http://localhost:80 et vous devriez arriver sur la page de login de Tock Studio.
+Pour accéder à l'espace admin, ouvrez votre navigateur et tapez l'adresse suivante : http://localhost:80 (ou http://tock.lan si vous n'avez pas pu faire tourner la stack docker) et vous devriez arriver sur la page de login de Tock Studio.
 <img src="img/tock-studio-login-page.png" alt="tock-studio-login-page">
 
 Pour se connecter, utilisez les identifiants suivants :

@@ -9,8 +9,6 @@ n = 15  # Example value
 # Randomly select n rows
 df_sampled = df.sample(n=n, random_state=42)  # random_state ensures reproducibility
 
-print(len(df_sampled))
-
 # Keep only the specified columns
 columns_to_keep = ['id', 'title', 'overview']
 df_filtered = df_sampled[columns_to_keep]
@@ -23,4 +21,3 @@ df_filtered.rename(columns={'id': 'source', 'overview': 'text', 'title': 'title'
 
 # Save the filtered DataFrame to a CSV file
 df_filtered.to_csv('data/documents_csv/filtered_horror_movies.csv', index=False, sep='|')
-

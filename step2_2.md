@@ -57,9 +57,20 @@ Sinon fichier disponibles en local ici **TODO**.
 
 ## Découverte du tooling et du format
 
-Pour ingérer ce dataset nous allons utiliser le script index_documents.py de TOCK documenté ici, il prend en entrée un csv à 3 colonnes dans ce format. Il va donc falloir convertir votre fichier dans ce format nous vous conseiller également de filtre le fichier et vous limiters à moins de documents / entrée pour accélérer le processus d'ingestion.
+Pour ingérer ce dataset nous allons utiliser le script [index_documents.py de TOCK documenté ici](https://github.com/theopenconversationkit/tock/tree/master/gen-ai/orchestrator-server/src/main/python/tock-llm-indexing-tools#documents-indexing), il prend en entrée un csv à 3 colonnes (`source|title|text`, séparateur pipe `|`). Il va donc falloir convertir votre fichier dans ce format nous vous conseiller également de filtrer le fichier et vous limiters à un échantillons de 5-15 lignes, l'idée étant de limiter le temps de vectorisation si vous êtes en local (ollama sans GPU).
+
+Format du fichier CSV d'entrée :
+```csv
+source|title|text
+https://www.themoviedb.org/movie/837286|Semangat Ular|Zaiton comes under the influence of the spell cast by a snake spirit. With her body under possession, she incapacitates her father and is lured to a hypnotised rendezvous with the snake spirit in his harem pit. The spirit takes on an anthropomorphised form and charms Zaiton, convincing her that her fiancée Rahim is a philanderer. Rahim and Zaiton’s father turn to a wise shaman to rescue Zaiton.
+https://www.themoviedb.org/movie/25886|Graveyard Disturbance|Five young robbers spend a whole night in a dark catacomb to win a priceless treasure. They will have to fight against lots of ferocious zombies and vampires. At the end they will meet the Death in person!
+```
 
 Voici un script python qui convertie la dataset donnée en exemple dans ce format de sortie en en gardant qu'une portion. Vous pouvez effectuer ces opération dans le langage de votre choix.
+
+### Exemple de script python utilisant Panda
+
+Ce script est présent dans [data/scripts/transform_horror_movie.py](./data/scripts/transform_horror_movie.py), nous vous proposons une image docker de tooling pour l'exécuter plus bas.
 
 ```python
 import pandas as pd
@@ -68,12 +79,10 @@ import pandas as pd
 df = pd.read_csv('/app/data/documents_csv/horror_movies.csv')
 
 # Set the number of random rows you want to keep
-n = 5  # Example value
+n = 15  # Example value
 
 # Randomly select n rows
 df_sampled = df.sample(n=n, random_state=42)  # random_state ensures reproducibility
-
-print(len(df_sampled))
 
 # Keep only the specified columns
 columns_to_keep = ['id', 'title', 'overview']
@@ -90,19 +99,21 @@ df_filtered.to_csv('data/documents_csv/filtered_horror_movies.csv', index=False,
 
 ```
 
-If you don't have any local python interpretor you can run it inside the tooling container like this :
+Exécution du script via l'image de tooling :
 ```bash
+# Sourcer vos variables d'environnement
+source docker/.env
+# Lancer le conteneur de tooling pour exécuter le script
 docker run --rm -it \
     -v "$(pwd)/data":/app/data \
     -e NO_PROXY="host.docker.internal,ollama-server,postgres-db,localhost" \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
-    --add-host=host.docker.internal:host-gateway \
-    --add-host=ollama-server:host-gateway \
-    --add-host=postgres-db:host-gateway \
-    tock/llm-indexing-tools:24.9.3 \
+    --add-host=ollama-server:$OLLAMA_SERVER \
+    --add-host=postgres-db:$POSTGRES_DB_SERVER \
+    tock/llm-indexing-tools:$TAG \
     /bin/bash
 
-# Then ..
+# Excuter le script
 python /app/data/scripts/transform_horror_movie.py
 
 # Vérifiez le contenu du CSV filtré
@@ -111,7 +122,20 @@ cat data/documents_csv/filtered_horror_movies.csv
 
 ## Ingestion avec le tooling
 
+### Configuration d'embedding
+
+TODO
+
+### Lancer l'ingestion
+
+TODO:
+- Retrouver le BOT ID
+- Retrouver le namespace
+
 ```bash
+# Sourcer vos variables d'environnement
+source docker/.env
+# Lancer un shell dans l'image de tooling en mode interactif
 docker run --rm -it \
     -v "$(pwd)/data":/app/data \
     -e NO_PROXY="host.docker.internal,ollama-server,postgres-db,localhost" \
@@ -121,7 +145,9 @@ docker run --rm -it \
     --add-host=postgres-db:host-gateway \
     tock/llm-indexing-tools:24.9.3 \
     /bin/bash
-
+# A l'intérieur du shell de l'image
+export TOCK_BOT_ID=
+export TOCK_BOT_NAMESPACE=
 python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv <NAMESPACE> <BOT-ID> data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
 ```
 

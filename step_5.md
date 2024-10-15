@@ -17,6 +17,11 @@
       - [Configurer OpenAi pour Emdedding](#configurer-openai-pour-emdedding)
       - [Configurer AzureOpenAI pour Emdedding](#configurer-azureopenai-pour-emdedding)
   - [Configuration final et activation](#configuration-final-et-activation)
+  
+
+- [Interroger le bot](#interroger-le-bot)
+
+
 - [Étape suivante](#étape-suivante)
 
 
@@ -154,6 +159,12 @@ Dès que cela est bon, vous pouvez activer le RAG, en revenant en haut de page (
 
 <img src="img/active-rag.png" alt="activation du rag">
 
+
+## Interroger le bot
+
+Maintenant vous pouvez discuter avec le bot et lui poser des questions.
+
+<img src="img/Bug-Bunny-question.png" alt="question avec le rag">
 
 ## Étape suivante
 

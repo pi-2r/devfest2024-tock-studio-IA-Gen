@@ -129,6 +129,10 @@ Cette partie s’attarde sur les intitulés **Indexing session** et **Conversati
 
 <img src="img/indexing-and-conversation-flow.png" alt="indexing and conversation flow">
 
+> **Note importante :** 
+>
+> Il faut que l’ingestion de données et cette configuration finale utilise le même LLM
+
 En [Étape 4](step_4.md), vous avez réalisé une ingestion de données, via un programme en python.
 Normalement, si l’ingestion a été correctement réalisé le programme a terminé avec un succès qui affiche des Id, comme dans l’exemple suivant :
 
@@ -145,6 +149,10 @@ Par exemple si on met à jour les différents éléments et que vous sauvegardez
 **SAVE**, vous devriez voir apparaitre une bannière verte signifiant que tout est correcte.
 
 <img src="img/rag-settings-success.png" alt="rag settings final">
+
+Dès que cela est bon, vous pouvez activer le RAG, en revenant en haut de page (par défaut celui-ci est désactivé).
+
+<img src="img/active-rag.png" alt="activation du rag">
 
 
 ## Étape suivante

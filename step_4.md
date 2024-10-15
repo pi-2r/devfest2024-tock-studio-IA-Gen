@@ -116,12 +116,15 @@ docker run --rm -it \
     --add-host=postgres-db:$POSTGRES_DB_SERVER \
     tock/llm-indexing-tools:$TAG \
     /bin/bash
+```
 
+Dans le conteneur :
+```bash
 # Excuter le script
 python /app/data/scripts/transform_horror_movie.py
 
 # Vérifiez le contenu du CSV filtré
-cat data/documents_csv/filtered_horror_movies.csv
+head data/documents_csv/filtered_horror_movies.csv -n 2
 ```
 
 ## Ingestion avec le tooling
@@ -140,18 +143,21 @@ Cette vectorisation intervient à 2 endroit, pour ingérer la base documentaire 
 
 #### Configuration avec ollama
 
-La configuration est sous format json :
-TODO
+La configuration est sous format json situé dans `data/configurations/embeddings_ollama_settings.json`, ce fichier contient le nom du modèle d'embedding ollama utilisé et l'emplacement du serveur ollama (vu du conteneur auquel nous fournirons un extra-host `ollama-server` qui pointe vers le bon serveur).
+Vous n'avez pas besoin de le modifier sauf si utilisez un modèle ollama d'emebdding différent.
 
-#### Configuration avec openai ou Azure OpenAI
+#### Configuration avec OpenAI ou Azure OpenAI
 
-TODO
+Vous pouvez utiliser un des modèles fourni par OpenAI ou Azure OpenAI comme modèle d'embedding dans ce cas inspirez vous configuration présentes ici : [tock-llm-indexing-tools
+/examples/](https://github.com/theopenconversationkit/tock/tree/master/gen-ai/orchestrator-server/src/main/python/tock-llm-indexing-tools/examples).
+
+Vous pouvez créer un fichier dans le dossier `data/configurations/` inspiré d'un de ces exemples avec vos nom de modèles / déploiement et clés.
 
 ### Lancer l'ingestion
 
-TODO:
-- Retrouver le BOT ID
-- Retrouver le namespace
+Si besoin ajustez les variables d'environnement `TOCK_BOT_ID` / `TOCK_BOT_NAMESPACE` et `EMBEDDING_JSON_CONFIGURATION`, pour rappel vous pouvez retrouver votre namespace et bot_id via Configuration > Application :
+
+![Application et namespace](./img/find_ns_app_bot_id_studio.png)
 
 ```bash
 # Sourcer vos variables d'environnement
@@ -161,18 +167,23 @@ docker run --rm -it \
     -v "$(pwd)/data":/app/data \
     -e NO_PROXY="host.docker.internal,ollama-server,postgres-db,localhost" \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
-    --add-host=host.docker.internal:host-gateway \
-    --add-host=ollama-server:host-gateway \
-    --add-host=postgres-db:host-gateway \
-    tock/llm-indexing-tools:24.9.3 \
+    --add-host=ollama-server:$OLLAMA_SERVER \
+    --add-host=postgres-db:$POSTGRES_DB_SERVER \
+    tock/llm-indexing-tools:$TAG \
     /bin/bash
-# A l'intérieur du shell de l'image
-export TOCK_BOT_ID=
-export TOCK_BOT_NAMESPACE=
-python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv <NAMESPACE> <BOT-ID> data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
 ```
 
-TODO ajouter l'output.
+```bash
+# A l'intérieur du shell de l'image
+export TOCK_BOT_ID=devfest2024
+export TOCK_BOT_NAMESPACE=app
+export EMBEDDING_JSON_CONFIGURATION=/app/data/configurations/embeddings_ollama_settings.json
+python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv $TOCK_BOT_NAMESPACE $TOCK_BOT_ID $EMBEDDING_JSON_CONFIGURATION data/configurations/vector_store_pgvector_settings.json 5000 -v
+```
+
+Chaque ingestion d'un ensemble documentaire est associée à un ID de session d'indexation, nous allons le renseigner dans la configuration de TOCK. Ces sessions sont utilent en production pour revenir en arrière en cas de défaut d'ingestion.
+
+![Sortie du script](./img/python-ingestion-result.png)
 
 ## Étape suivante
 

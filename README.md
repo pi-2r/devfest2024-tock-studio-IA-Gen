@@ -7,14 +7,14 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 
 ## Sommaire
 
-- [Introduction: Tock](step_0.md)
+- [Introduction](step_0.md)
 
 
 - [Mise en place de l'environnement](step_1.md)
 - [Entrainements du bot](step_2.md)
 
 
-- [Accélérons l'entrainement avec de l'IAGen](step_3_.md)
+- [Accélérons l'entrainement avec de l'IAGen](step_3.md)
 - [Préparons notre base documentaire](step_4.md)
 - [Activer l'IAGen dans notre bot](step_5.md)
 
@@ -29,5 +29,6 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 - [Remerciements](thanks-you.md)
 
 ## Pour aller plus loin
-- [Liste de ressources](resources.md)
+
+- [En savoir plus / ressources](resources.md)
 

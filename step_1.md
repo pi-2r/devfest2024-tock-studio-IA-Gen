@@ -8,14 +8,15 @@
 <br/>
 <u>Objectifs de cette étape:</u> 
 
-- Installer les dépendances nécessaires pour faire ce CodebLab
-- Installer Tock sur sa machine avec Docker
-- Lancer l'espace admin depuis la stack Docker
-- Créer votre 1er Application
+- Installer les dépendances nécessaires pour faire ce CodeLab :
+  - Installer Ollama en local
+  - Installer Tock et LangFuse (avec Docker)
+- Lancer l'application Tock Studio
+- Créer un Bot
 
 ## Sommaire
 
-- [Dépendance](#dépendance)
+- [Dépendance](#docker)
 
 
 - [Installer Ollama](#installer-ollama)
@@ -62,20 +63,23 @@ Modifiez votre fichier `/etc/hosts` (Mac / Linux) ou `C:\windows\system32\driver
 
 Nous ferons référence à ces éléments dans la suite du tutoriel.
 
-## Dépendance
+## Docker
 
-Assurez-vous d'avoir Docker sur votre machine. Ce workshop a été testé avec la dernière version Docker.
+Nous allons déployer plusieurs outils (Tock, LangFuse) en local grâce à Docker. 
+Vous aurez donc besoin d'avoir Docker installé sur votre machine. Le workshop a été testé avec la dernière version.
+
+Vérifiez que Docker est opérationnel :
 ```bash
 docker -v
 ```
 <img src="img/docker-version.png"  alt="docker version">
 
-Docker doit aussi être fonctionnel sur votre machine.
-
 ## Configuration globale de l'environnement
 
-Dans le cadre de ce codelab vous allez ou pas utiliser certains composants en local ou ceux mis à votre disposition en cas de difficultés.
-Tout est configuré dans le fichier `docker/.env` :
+Pour information.
+
+Dans le cadre de ce codelab vous allez pouvoir utiliser certains composants en local (ou des instances mises à 
+disposition, en cas de difficultés). Tout est configuré dans le fichier `docker/.env` :
 ```bash
 cp docker/template.env docker/.env
 # Pour sourcer les variable dans un terminal
@@ -117,13 +121,9 @@ ollama pull nomic-embed-text
 ollama run tinyllama
 ```
 
-Une fois ce modèle téléchargé et toujours dans le terminal vous pouvez tester/jouer avec le model ou quitter 
-l’environnement en appuyant sur CTRL + D.
-
-> **Note** : Vous pouvez aussi télécharger le modèle nomic-embed-text pour le codelab. Pour cela, vous pouvez lancer la commande suivante :
-```bash 
-ollama run nomic-embed-text
-```
+Une fois ce modèle téléchargé et toujours dans le terminal vous pouvez tester/jouer avec le modèle
+(entrez une question pour voir si le modèle répond), ou quitter 
+en appuyant sur CTRL + D.
 
 ### ⚠️ Fallback : Ollama ne marche pas
 
@@ -140,14 +140,15 @@ export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan,
 
 ## Lancer l'environnement avec Docker
 
-Vous allez monter un environnement Tock sur Docker. Il y a un dossier nomé **docker**, qui contient un fichier 
+Vous allez déployer une plateforme Tock avec Docker. A la racine du repo Git du codelab se trouve 
+un dossier nomé **docker**. Il contient un fichier descripteur 
 docker-compose avec tous les éléments dont vous avez besoin pour ce codelab.
 
->Note : ce fichier docker-compose est inspiré du répertoire github : https://github.com/theopenconversationkit/tock-docker.git
-
-Pour éviter une congestion du réseau nous avons mis les images dans une registry docker local présente sur http://gpu-server:5000/ et configurée dans `docker/.env`. Cette registry n'étant pas en HTTPS vous devez préalablement l'autoriser en tant que registry insecure.
+>Note : pour info ce descripteur est adapté de celui fourni avec la distribution Tock sur github : https://github.com/theopenconversationkit/tock-docker.git
 
 ### Autorisation de la registry locale insecure
+
+Pour éviter une congestion du réseau nous avons mis les images dans une registry docker local présente sur http://gpu-server:5000/ et configurée dans `docker/.env`. Cette registry n'étant pas en HTTPS vous devez préalablement l'autoriser en tant que registry insecure.
 
 #### Sous linux
 Éditer le fichier `/etc/docker/daemon.json` :
@@ -266,8 +267,8 @@ Une fois cela fait, cliquez sur le bouton **CREATE**.
 ## Interroger le bot
 
 Dans ce projet et une fois toutes les étapes précédemment réalisées, vous pouvez ouvrir depuis votre navigateur (CTRL + O, ouvrir le fichier de ce repo cloné) et commencer à dialoguer avec le bot au choix :
-* Page web intégrant le [Tock React Kit](https://github.com/theopenconversationkit/tock-react-kit) [index.html](index.html)
-* Page web intégrant le [Tock Vue Kit](https://github.com/theopenconversationkit/tock-vue-kit) [index-tvk.html](index-tvk.html)
+* Page web intégrant le [Tock React Kit](https://github.com/theopenconversationkit/tock-react-kit) 👉 [index.html](index.html)
+* Page web intégrant le [Tock Vue Kit](https://github.com/theopenconversationkit/tock-vue-kit) 👉 [index-tvk.html](index-tvk.html)
 
 Vous devez ensuite si nécessaire ajuster l'URL dite du Bot API, il s'agit du l'API Rest servant de point d'entrée à la réception des message des divers connecteurs dont le connecteur web, le format de l'URL est le suivant : `http://localhost:8080/io/<NAMESPACE>/<BOTID>/web`. Si vous utilisez la stack TOCK du CODELAB (pas en local / docker), utilisez cette URL `http://tock.lan:8080/io/<NAMESPACE>/<BOTID>/web`.
 

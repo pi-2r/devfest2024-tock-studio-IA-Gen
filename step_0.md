@@ -1,21 +1,45 @@
-# TOCK: The Open Conversation Kit
+# Tock: The Open Conversation Kit
 [<img src="img/neo-sleep.jpg"  alt="neo rage against the machine">](https://www.youtube.com/watch?v=sjoad6gcRzs)
 
 > "Follow the white rabbit.", The matrix, Les Wachowski, 1999
 
 
-##  Tock c'est quoi ?
+Tock (https://doc.tock.ai/) est une plateforme conversationnelle ouverte.
+La solution fut créée par SNCF Connect and Tech en 2016 pour motoriser le chatbot Voyages-sncf.com (puis OUI.sncf avant de devenir 
+SNCF Connect utilisé quotidiennement par des millions de français). Partagée en opensource sur GitHub dès 2017,
+la solution a depuis été reprise par de nombreuses entreprises et une communauté d'utilisateurs et de contributeurs s'est créée.
 
->Tock, acronyme de The Open Conversation Kit (https://doc.tock.ai/), a été développé au sein de SNCF Connect and Tech (précédemment connu sous le nom de OUI.sncf), dans leur département Innovation. Lancé en 2016 pour le site de vente de billets de train oui.sncf, Tock a révolutionné l'interaction utilisateur en comprenant une recherche écrite via une barre de recherche intuitive, sans nécessiter un formulaire standard.
->
->L'objectif de cette innovation était de simplifier le processus de demande de voyage pour les utilisateurs, permettant au bot de répondre de manière naturelle, comme le ferait un être humain. Par exemple, dans une situation datant de décembre 2020, un voyageur souhaitant se rendre de Paris à Brive le soir suivant pourrait exprimer sa demande au OUIbot.
+Conçue comme une plateforme d'intégration de briques NLP (Natural Language Processing) sous dépendance forte et apportant
+à la fois des interfaces graphiques utilisateur et un framework conversationnel en Kotlin, la plateforme a ensuite bien
+évolué : connecteurs à de nombreux canaux texte et voix, création de bots en mode "low code" dans Tock Studio, 
+compatibilité avec d'autres langages de programmation comme Javascript ou Python, ajout de fonctionnalités analytiques,
+gestion multilingue, etc.
+
+Plus récemment, avec l'essor de l'IA Générative et des LLM, Tock s'est révélée une plateforme efficace pour tester 
+et intégrer de nouvelles technologies conversationnelles, permettant des approches hybrides tout en restant en maîtrise 
+de la stack technique et des données. Certaines de ses fonctionnalités ont encore peu d'équivalents dans les solutions du marché :
+- Combiner dans un même agent conversationnel IA Générative et arbres de décisions traditionnels
+- Intégrer des solutions CSP utilisées par les équipes de Relation Client, pour passer facilement de l'IA Générative 
+- à un humain dans la même conversation
+- Mécanismes pour activer/désactiver le RAG, exclure certains sujets, reconfigurer les prompts, etc.
+
+A noter : c'est notamment grâce à des contributions ambitieuses des équipes Crédit Mutuel Arkéa (qui utilisent également 
+Tock depuis plusieurs années) que Tock a intégré ces dernières années des fonctionnalités autour des LLM et du RAG.
+Cela montre toute la force de l'opensource et l'effet levier de la communauté pour une innovation qui profite à tous.
+
+Dans ce codelab, on utilisera Tock et Ollama pour construire un agent conversationnel et expérimenter les nombreuses 
+possibilités offertes par ces solutions ouvertes.
+
+En guise d'illustration, Tock a permis de concevoir de nombreux chatbots et assistants vocaux en 8 ans d'existence : 
+e-commerce, énergie, banque en ligne, bots internes (RH, support informatique, juridique, achats), assistants téléphoniques
+comme AlloCovid en 2020 avec Allo-Media, avatars virtuels et événementiel avec SPooN, digital workplace et jeu video 
+avec WorkAdventure... A vous d'inventer de nouveaux usages !
+
+
+> Ci-dessous une illustration du premier chatbot OUI.sncf motorisé par Tock, permettant de rechercher, réserver et 
+> même payer un billet de train en conversationnel (2018)
 >
 ><center><img src="img/ouibot.png" alt="Ancienne page web de OUIbot"></center>
-><center>Ancienne page web de OUIbot permettant de comprendre la demande client et d’en donner un résultat.</center>
-></br>
->
->Le bot était alors capable de saisir la gare de départ, la destination et le moment souhaité pour le voyage, offrant ainsi des réponses pertinentes et adaptées à l'utilisateur.
-
 
 
 ## Étape suivante

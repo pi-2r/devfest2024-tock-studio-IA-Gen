@@ -16,6 +16,8 @@
 ## Sommaire
 
 - [Dépendance](#dépendance)
+
+
 - [Installer Ollama](#installer-ollama)
   - [Installation depuis le Codelab](#installation-depuis-le-codelab)
     - [Récupérer les modèles pour l'atelier sur la machine GPU](#récupérer-les-modèles-pour-latelier-sur-la-machine-gpu)
@@ -24,14 +26,24 @@
       - [Sous MacOS / Windows](#sous-macos--windows)
   - [Récupérer les modèles depuis internet hors du Codelab](#récupérer-les-modèles-depuis-internet-hors-du-codelab)
   - [Tester avec un petit prompt](#tester-avec-un-petit-prompt)
+  
+
 - [Lancer l'environnement avec Docker](#lancer-lenvironnement-avec-docker)
+
+
 - [Accéder à l'espace admin](#accéder-à-l'espace-admin)
 - [Configurer Tock Studio](#configurer-tock-studio)
 - [Créer votre 1er Application](#créer-votre-1er-application)
 - [Créer votre 1er connecteur web](#créer-votre-1er-connecteur-web)
+
+
 - [Lancer le bot](#lancer-le-bot)
 - [Interroger le bot](#interroger-le-bot)
+
+
 - [Ressources](#ressources)
+
+
 - [En attendant la suite du Codelab...](#en-attendant-la-suite-du-codelab)
 - [Étape suivante](#étape-suivante)
 

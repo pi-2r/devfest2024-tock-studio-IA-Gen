@@ -125,6 +125,22 @@ que vous souhaitez utiliser.
 Pour le reste de configuration, nous vous invitons à aller directement au chapitre [Configuration final et activation](#configuration-final-et-activation)
 
 ### Configuration final et activation
+Cette partie s’attarde sur les intitulés **Indexing session** et **Conversation flow**.
+
+<img src="img/indexing-and-conversation-flow.png" alt="indexing and conversation flow">
+
+En [Étape 4](step_4.md), vous avez réalisé une ingestion de données, via un programme en python.
+Normalement, si l’ingestion a été correctement réalisé le programme a terminé avec un succès qui affiche des Id, comme dans l’exemple suivant :
+
+<img src="img/python-ingestion-result.png" alt="résultat de l'ingestion en python">
+
+Dans ce résultat, vous avez une variable nommée **Index session ID** qui fournit un identifiant unique.
+Copier cet identifiant pour le coller dans le champ **Indexing session id**.
+
+
+Dans l’intitulé **Conversation flow** et dans le champ **No answer sentence**, vous devez spécifier une phrase lorsque l’IA n’est pas capable de répondre.
+Par la même occasion, vous pouvez aussi rediriger vers une story spécifique dans le champ **Unanswered story redirection**
+
 
 Une fois que vous avez configuré les différents paramètres, vous pouvez activer le RAG en cliquant sur le bouton **Save**.
 ## Étape suivante

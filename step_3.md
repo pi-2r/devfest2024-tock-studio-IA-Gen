@@ -8,7 +8,15 @@
 
 - [Gen AI / RAG Settings](#gen-ai--rag-settings)
   - [Configuration](#configuration)
-  - [Activation du RAG & Configuration du LLM Engine]
+    - [LLM Engine](#llm-engine)
+      - [Configurer Ollama pour LLM Engine](#configurer-ollama-pour-llm-engine)
+      - [Configurer OpenAi pour LLM Engine](#configurer-openai-pour-llm-engine)
+      - [Configurer AzureOpenAI pour LLM Engine](#configurer-azureopenai-pour-llm-engine)
+    - [Emdedding](#emdedding)
+      - [Configurer Ollama pour Emdedding](#configurer-ollama-pour-emdedding)
+      - [Configurer OpenAi pour Emdedding](#configurer-openai-pour-emdedding)
+      - [Configurer AzureOpenAI pour Emdedding](#configurer-azureopenai-pour-emdedding)
+  - [Configuration final et activation](#configuration-final-et-activation)
 - [Étape suivante](#étape-suivante)
 
 
@@ -50,7 +58,75 @@ Cette fonctionnalité permettra à TOCK de générer une réponse à une requêt
 
 - Le prompt est le script qui détermine la personnalité du Bot, le contexte dans lequel il doit répondre, la façon dont il doit s’adresser à l’utilisateur, les recommandations ou instructions de réponses, les styles et formats de réponses.
 
+### Configurer Ollama pour LLM Engine
+Pour connecter ollama à Tock studio, il vous faut renseigner l’accès à Ollama via cette url d’accès (**BaseUrl**) : http://ollama-server:11434. 
+Pour le modèle (**Model**), là c’est à vous de renseigner le nom du modèle que vous utilisez dans ce CodeLab (ici nous avons tinyllama). Enfin pour la température, vous pouvez laisser la valeur par défaut à 0.7.
 
+<img src="img/rag-settings-example-ollama.png" alt="rag settings ollama">
+
+### Configurer OpenAi pour LLM Engine
+
+Si vous souhaitez utiliser openAI, vous devez vous inscrire sur la plateforme [OpenAI](https://platform.openai.com/docs/introduction)
+pour obtenir une clé d'API. Une fois cela fait rendez-vous à cette page [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) pour générer votre clé d'API.
+
+Dès que vous avez votre clé d'API, vous pouvez la renseigner dans le champ **API Key** et choisir le model (**Model name**) que vous souhaitez utiliser.
+Par exemple vous pourriez avoir ce genre de rendu.
+
+<img src="img/rag-settings-example-openai.png" alt="rag settings  openai">
+
+### Configurer AzureOpenAI pour LLM Engine
+
+Si vous souhaitez utiliser Azure OpenAI, vous devez vous inscrire sur la plateforme
+[Azure OpenAI](https://azure.microsoft.com/fr-fr/products/ai-services/openai-service) et d'avoir un compte professionnel  
+afin d'avoir une clé d'API.
+Une fois cela fait, vous pouvez renseigner votre clé d'API dans le champ **API Key** et choisir le model (**Model name**)
+que vous souhaitez utiliser.
+
+<img src="img/rag-settings-example-azure.png" alt="rag settings azure">
+
+### Emdedding
+
+### Configurer Ollama pour Emdedding
+
+Pour connecter ollama à Tock studio sur la partie embedding, il vous faut renseigner l’accès à Ollama via cette url d’accès (**BaseUrl**) : http://ollama-server:11434.
+Pour le modèle (**Model**), là c’est à vous de renseigner le nom du modèle que vous utilisez dans ce CodeLab 
+(ici nous avons **nomic-embed-text**).
+
+
+<img src="img/embedding-ollama-setting.png" alt="embedding ollama">
+
+Pour le reste de configuration, nous vous invitons à aller directement au chapitre [Configuration final et activation](#configuration-final-et-activation)
+
+
+### Configurer OpenAi pour Emdedding
+
+Si vous souhaitez utiliser openAI, vous devez vous inscrire sur la plateforme [OpenAI](https://platform.openai.com/docs/introduction)
+pour obtenir une clé d'API. Une fois cela fait rendez-vous à cette page [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) 
+pour générer votre clé d'API.
+
+Dès que vous avez votre clé d'API, vous pouvez la renseigner dans le champ **API Key** et choisir le model 
+(**Model name**) actuellement disponible : **text-embedding-ada-002**.
+Par exemple vous pourriez avoir ce genre de rendu.
+
+<img src="img/embedding-openai-settings.png" alt="embedding openai">
+
+Pour le reste de configuration, nous vous invitons à aller directement au chapitre [Configuration final et activation](#configuration-final-et-activation)
+
+### Configurer AzureOpenAI pour Emdedding
+
+Si vous souhaitez utiliser Azure OpenAI, vous devez vous inscrire sur la plateforme
+[Azure OpenAI](https://azure.microsoft.com/fr-fr/products/ai-services/openai-service) et d'avoir un compte professionnel  
+afin d'avoir une clé d'API.
+Une fois cela fait, vous pouvez renseigner votre clé d'API dans le champ **API Key** et choisir le model (**Model name**)
+que vous souhaitez utiliser.
+
+<img src="img/embedding-azureopenai-settings.png" alt="embedding azure">
+
+Pour le reste de configuration, nous vous invitons à aller directement au chapitre [Configuration final et activation](#configuration-final-et-activation)
+
+### Configuration final et activation
+
+Une fois que vous avez configuré les différents paramètres, vous pouvez activer le RAG en cliquant sur le bouton **Save**.
 ## Étape suivante
 
 - [Étape 4](step_4.md)

@@ -172,7 +172,9 @@ export TOCK_BOT_NAMESPACE=
 python tock-llm-indexing-tools/index_documents.py data/documents_csv/filtered_horror_movies.csv <NAMESPACE> <BOT-ID> data/configurations/embeddings_ollama_settings.json data/configurations/vector_store_pgvector_settings.json 5000 -v
 ```
 
+Résultat
 
+<img src="img/python-ingestion-result.png" alt="resultat">
 ## Étape suivante
 
 - [Étape 3](step_3.md)

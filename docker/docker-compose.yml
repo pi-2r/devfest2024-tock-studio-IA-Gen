@@ -183,9 +183,9 @@ services:
     restart: always
     healthcheck:
       test: ["CMD-SHELL", "[ -f /tmp/db_init_completed ] && pg_isready -U postgres"]
-      interval: 3s
-      timeout: 3s
-      retries: 10
+      interval: 5s
+      timeout: 20s
+      retries: 15
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -224,7 +224,8 @@ services:
   langfuse-server:
     image: ${PLATFORM}langfuse/langfuse:${LANGFUSE_TAG}
     depends_on:
-      - postgres-db
+      postgres-db:
+        condition: service_healthy
     ports:
       - "3000:3000"
     environment:

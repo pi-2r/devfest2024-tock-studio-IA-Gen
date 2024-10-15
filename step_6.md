@@ -15,7 +15,9 @@
 ## Sommaire
 
 - [Lui faire changer de personnalité](#lui-faire-changer-de-personnalité)
-- [Autre exemple](#autre-exemple)
+- [Les risques liés au jailbreak de prompt](#les-risques-liés-au-jailbreak-de-prompt)
+
+
 - [Ressources](#ressources)
 - [Étape suivante](#étape-suivante)
 
@@ -34,7 +36,7 @@ Là, vous allez voir que le bot va vous répondre de manière totalement décal�
 
 <img src="img/jealbreak-example.png" alt = "jealbreak" >
 
-## Autre exemple
+## Les risques liés au jailbreak de prompt
 
 Les exemples qui vont être évoqué sont donnés à titre indicatif et ne doivent pas être utilisés pour nuire à autrui.
 Ils sont évoqués pour illustrer les risques liés à l'utilisation de prompt de manière non contrôlée.

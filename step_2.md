@@ -131,4 +131,4 @@ Par exemple, **Bonjour**, **Salut**, **Hello**.
 
 ## Étape suivante
 
-[Étape 2_1](step2_1.md)
+[Étape 3](step_3.md)

@@ -10,12 +10,12 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 - [Introduction: Tock](step_0.md)
 - [Mise en place de l'environnement](step_1.md)
 - [Entrainements du bot](step_2.md)
-  - [Accélérons l'entrainement avec de l'IAGen](step2_1.md)
-  - [Préparons notre base documentaire](step2_2.md)
-- [Activer l'IAGen dans notre bot](step_3.md)
-- [Faire dérailler notre bot](step_4.md)
-- [Reprendre le contrôle de notre bot](step_5.md)
-- [Connecter notre bot à notre boutique](step_6.md)
+  - [Accélérons l'entrainement avec de l'IAGen](step_3_.md)
+  - [Préparons notre base documentaire](step_4.md)
+- [Activer l'IAGen dans notre bot](step_5.md)
+- [Faire dérailler notre bot](step_6.md)
+- [Reprendre le contrôle de notre bot](step_7.md)
+- [Connecter notre bot à notre boutique](step_8.md)
 - [Remerciements](thanks-you.md)
 
 ## Pour aller plus loin

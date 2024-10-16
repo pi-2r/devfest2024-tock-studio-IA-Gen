@@ -6,10 +6,7 @@
 Objectifs:
 - Comprendre ce qu'est un LLM
 - Activer et configurer un LLM Engine
-- Lancer les 1ères générations de phrase pour entrainer plus rapidement le model
-- Découvrir un outil d'observabilité des LLM: Langfuse, créer une organisation et un projet pour obtenir les clés d’API
-- Brancher Tock Studio sur Langfuse pour observer les performances du modèle
-- Tester le rendu de génération de phrase et regarder le rendu dans langfuse
+- Utiliser l'IA Générative pour générer rapidement des phrases et entraîner plus rapidement le modèle
 
 ## Sommaire
 
@@ -146,9 +143,15 @@ export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan,
 
 ## Gen AI - Sentence generation
 
-Le menu **Gen AI** > **Sentence Generation Settings** permet de configurer la fonctionnalité de génération de phrases d'entraînement pour les bots FAQ.
+Désormais, on va utiliser notre l'IA Générative (notre LLM) pour générer rapidement des nouvelles phrases et variantes.
+Cela permettra d'entraîner plus rapidement notre modèle initial, donc d'améliorer la compréhension du bot.
+Pour autant, le bot utilisera toujours les mêmes réponses qu'auparavant. On ne donne donc pas "carte blanche" à l'IA
+Générative, ce n'est pas elle qui répond, elle ne peut pas improviser ou halluciner.
+Pour le moment, elle améliore donc la compréhension du bot, sans perdre le contrôle sur les différentes réponses du bot.
 
-> Pour accéder à cette page, il faut bénéficier du rôle **_botUser_**.
+Le menu **Gen AI** > **Sentence Generation Settings** permet de configurer la génération de phrases d'entraînement pour les bots FAQ.
+
+> Remarque : pour accéder à cette page, il faut bénéficier du rôle **_botUser_**.
 
 ![Génération des phrases - Configuration](img/sentence-generation-settings-page.png "Ecran de configuration")
 
@@ -158,21 +161,20 @@ Pour activer la fonction de génération de phrases, vous devez choisir :
 - Voir la [liste des fournisseurs d'IA](providers/gen-ai-provider-llm-and-embedding.md)
 
 
-**Une température :**
-- C’est la température qui apparaîtra par défaut lors de la création des phrases d'entraînement.
-- Elle Permet de définir le degré d’inventivité du modèle utilisé pour générer des phrases.
-- Elle est situé entre 0 et 1.0.
+**Une "température" (par défaut pour les nouvelles phrases) :**
+- Cela correspond au degré d’inventivité du modèle utilisé pour générer des phrases.
+- La température est située entre 0 et 1.0.
   - 0 = pas de latitude dans la création des phrases
-  - 1.0 = Plus grande latitude dans la création des phrases.
+  - 1.0 = grande latitude dans la création des phrases
 
 **Un prompt :**
-- Encadré dans lequel inclure le prompt qui permet la génération de nouvelles phrases d'entraînement.
+- C'est un ensemble d'instructions permettant de cadrer la génération de nouvelles phrases d'entraînement.
 
 **Le nombre de phrases :**
-- Défini le nombre de phrases d'entraînement générées par chaque requête.
+- Nombre de phrases d'entraînement générées par chaque requête.
 
 **Activation :**
-- Permet d'activer ou pas la fonctionnalité.
+- Permet d'activer la fonctionnalité.
 
 
 ### Ollama
@@ -283,6 +285,8 @@ Vous pouvez cliquer ensuite sur l’onglet **Answer** pour rédiger une réponse
 ## Ressources
 | Titre                                                                                  | Lien                                                                                                                                                                                                                                             |
 |----------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ce qui se cache derrière le fonctionnement de ChatGPT (ScienceEtonnante)               | [https://www.youtube.com/watch?v=7ell8KEbhJo](https://www.youtube.com/watch?v=7ell8KEbhJo)                                                                                                                                                                             |
+| Comprendre et utiliser les modèles de langage d'IA (Sébastien COLLET @ Devoxx 2023)    | [https://www.youtube.com/watch?v=ZbWL2W53BXY](https://www.youtube.com/watch?v=ZbWL2W53BXY)                                                                                                                                                                             |
 | Attention Is All You Need                                                              | [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)                                                                                                                                                                             |
 | The Illustrated Transformer                                                            | [http://jalammar.github.io/illustrated-transformer/](http://jalammar.github.io/illustrated-transformer/)                                                                                                                                         |
 | Evaluating Large Language Model (LLM) systems: Metrics, challenges, and best practices | [https://medium.com/data-science-at-microsoft/evaluating-llm-systems-metrics-challenges-and-best-practices-664ac25be7e5](https://medium.com/data-science-at-microsoft/evaluating-llm-systems-metrics-challenges-and-best-practices-664ac25be7e5) |

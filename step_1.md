@@ -9,9 +9,9 @@
 <u>Objectifs de cette étape:</u> 
 
 - Installer les dépendances nécessaires pour faire ce CodeLab :
-  - Installer Ollama en local
-  - Installer Tock et LangFuse (avec Docker)
-- Lancer l'application Tock Studio
+  - Installer **Tock** via **Docker** (pour info on installera **pgvector** et **LangFuse** plus tard durant le lab)
+  - Installer **Ollama** en local
+- Lancer l'application _Tock Studio_
 - Créer un Bot
 
 ## Sommaire
@@ -79,10 +79,11 @@ Pour information.
 Dans le cadre de ce codelab vous allez pouvoir utiliser certains composants en local (ou des instances mises à 
 disposition, en cas de difficultés). Tout est configuré dans le fichier `docker/.env` :
 
-> Note: Si vous avez un Mac, il faut utiliser le fichier template-arn64.env
+> Note: Si vous avez un Mac, il faut utiliser le fichier template-arm64.env
 
 ```bash
 cp docker/template.env docker/.env
+# Sur Mac: cp docker/template-arm64.env docker/.env 
 # Pour sourcer les variable dans un terminal
 source docker/.env
 ```
@@ -263,13 +264,15 @@ Si vous utilisez la stack Tock mutualisée dans la salle du Codelab (ie. pas vot
 
 ## Ressources
 
-| Information                       | Lien                                                                           |
-|-----------------------------------|--------------------------------------------------------------------------------|
-| Tock Studio                       | [https://doc.tock.ai](https://doc.tock.ai)                                     |
-| Docker                            | [https://www.docker.com/](https://www.docker.com/)                             |
-| A Docker Tutorial for Beginners   | [https://docker-curriculum.com/](https://docker-curriculum.com/)               |
-| IntelliJ                          | [https://www.jetbrains.com/fr-fr/idea/](https://www.jetbrains.com/fr-fr/idea/) |
-| Ollama                            | [https://ollama.com/](https://ollama.com/)                                     |
+Si vous voulez en savoir plus sur les outils installés, n'hésitez pas à visiter leurs sites officiels.
+
+| Information                     | Lien                                                                           |
+|---------------------------------|--------------------------------------------------------------------------------|
+| Tock                            | [https://doc.tock.ai](https://doc.tock.ai)                                     |
+| Docker                          | [https://www.docker.com/](https://www.docker.com/)                             |
+| A Docker Tutorial for Beginners | [https://docker-curriculum.com/](https://docker-curriculum.com/)               |
+| IntelliJ                        | [https://www.jetbrains.com/fr-fr/idea/](https://www.jetbrains.com/fr-fr/idea/) |
+| Ollama                          | [https://ollama.com/](https://ollama.com/)                                     |
 
 
 

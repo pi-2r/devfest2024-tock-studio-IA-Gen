@@ -15,17 +15,20 @@
 
 ## Tock
 
-| Événement/Source            | Description | Lien |
-|-----------------------------|-------------|------|
-| Devoxx 2018                 | Conférence par Julien Buret, créateur de Tock | https://www.youtube.com/watch?v=K4q8ZHw9TuI |
-| Open Source Experience 2021 | Présentation de Tock par François Nollen | https://www.youtube.com/watch?v=UsKkpYL7Hto |
-| Framasoft                   | Référencement de Tock Studio | https://framalibre.org/content/tock |
-| Medevel                     | Tock parmi les 13 meilleures solutions open source pour chatbots | https://medevel.com/open-source-chatbot-frameworks/#5tock |
-| AlloCovid                   | Présentation de la solution | https://www.leparisien.fr/societe/sante/allocovid-un-assistant-vocal-pour-diagnostiquer-le-covid-19-27-04-2020-8306274.php |
-| digital sncf                | Devenir "dresseur de bot" en 48h | https://www.digital.sncf.com/actualites/hack-bot-devenir-dresseur-de-bot-en-48h |
-| LinkedIn                    | Développer un chatbot en 20 minutes avec Tock et ChatGPT | https://www.linkedin.com/feed/update/urn:li:activity:7027965520293294080/ |
-| Deezer                      | Podcast "Chatbot Stratégie" | https://www.deezer.com/fr/show/1757532 |
-| ASSISES DU CSIESR 2022      | Retour d'expérience sur la mise en place d'un agent conversationnel | https://www.youtube.com/watch?v=EJx_ryp69CM |
+| Événement/Source            | Description                                                         | Lien |
+|-----------------------------|---------------------------------------------------------------------|------|
+| Devoxx 2018                 | Conférence par Julien Buret, créateur de Tock                       | https://www.youtube.com/watch?v=K4q8ZHw9TuI |
+| Open Source Experience 2021 | Démo live de Tock par François Nollen                               | https://www.youtube.com/watch?v=UsKkpYL7Hto |
+| WAXconf 2024                | Conférence par Benjamin Bernard et Pierre Therrode                  | https://www.youtube.com/watch?v=lYmUeYoVkwc |
+| WorkAdventure               | Intégration de Tock dans WorkAdventure (digital workplace)          | https://www.youtube.com/watch?v=qJLFt_uCo2U |
+| SPooN.ai                    | Intégration de Tock avec les avatars virtuels de SPooN.ai           | https://docs.spoon.ai/developers/1.6.0/going_further/chatbots.html#tock |
+| Framasoft                   | Référencement de Tock Studio                                        | https://framalibre.org/content/tock |
+| Medevel                     | Tock parmi les 13 meilleures solutions open source pour chatbots    | https://medevel.com/open-source-chatbot-frameworks/#5tock |
+| AlloCovid                   | Présentation de la solution                                         | https://www.leparisien.fr/societe/sante/allocovid-un-assistant-vocal-pour-diagnostiquer-le-covid-19-27-04-2020-8306274.php |
+| SNCF Digital                | Devenir "dresseur de bot" en 48h                                    | https://www.digital.sncf.com/actualites/hack-bot-devenir-dresseur-de-bot-en-48h |
+| LinkedIn                    | Développer un chatbot en 20 minutes avec Tock et ChatGPT            | https://www.linkedin.com/feed/update/urn:li:activity:7027965520293294080/ |
+| Deezer                      | Podcast "Chatbot Stratégie"                                         | https://www.deezer.com/fr/show/1757532 |
+| Assises du CSIESR 2022      | Retour d'expérience sur la mise en place d'un agent conversationnel | https://www.youtube.com/watch?v=EJx_ryp69CM |
 
 ## Lecture journalistique
 
@@ -63,18 +66,22 @@
 
 ## Vidéos et conférences
 
-| Titre                                                                       | Intervenant(s) | Événement | Lien                                                                             |
-|-----------------------------------------------------------------------------|----------------|-----------|----------------------------------------------------------------------------------|
-| Comment l'IA va sauver le travail                                           | Thomas Solignac | TEDxUniversitéParisDauphine | https://www.youtube.com/watch?v=-Eqg9s4hoQU                                      |
-| De l'urgence d'un droit des robots ?                                        | Alain Bensoussan | TEDxParis | https://www.youtube.com/watch?v=3qkjEeV3Sno                                      |
-| L'intelligence humaine                                                      | Luc TRUNTZLER | TEDxLimoges | https://www.youtube.com/watch?v=SMMpwNSgN3E                                      |
-| L'IA va-t-elle changer notre métier de développeur ?                        | Louis-Guillaume MORAND, Eric GRENON | Devoxx 2023 | https://www.youtube.com/watch?v=vQqOV83ZMpE                                      |
-| Alfredo Linguini et les Modèles Génératifs : Qui Fait Vraiment la Cuisine ? | Yann Carbonne | Devfest 2023 | https://youtu.be/W0h0lyrtABI?si=VUuCWHQWE2cZqGxS                                 |
-| Course à l'IA, vers le meilleur des mondes ?                                | - | ARTE | https://www.youtube.com/watch?v=_kcnrG6Yxfo                                      |
-| Perdons-nous le contrôle sur l'IA ?                                         | - | 42 - La réponse à presque tout (ARTE) | https://www.youtube.com/watch?v=HyoABbailQQ                                      |
-| IA : notre futur assistant ou nouveau maître ?                              | Justine Cassell et Cédric Villani | Thinkerview | https://www.youtube.com/watch?v=GeYs3k5Y-Rg                                      |
-| Intelligence artificielle, bullsh*t, pipotron ?                             | Benjamin Bayart | Thinkerview | https://www.youtube.com/watch?v=tTb5wQw_8JE                                      |
-| Préparez-vous à la réflexion hybride                                        | Ray Kurzweil | TED | https://www.ted.com/talks/ray_kurzweil_get_ready_for_hybrid_thinking?language=fr |
+| Titre                                                                       | Intervenant(s)                      | Événement                             | Lien                                                                             |
+|-----------------------------------------------------------------------------|-------------------------------------|---------------------------------------|----------------------------------------------------------------------------------|
+| Comment l'IA va sauver le travail                                           | Thomas Solignac                     | TEDxUniversitéParisDauphine           | https://www.youtube.com/watch?v=-Eqg9s4hoQU                                      |
+| De l'urgence d'un droit des robots ?                                        | Alain Bensoussan                    | TEDxParis                             | https://www.youtube.com/watch?v=3qkjEeV3Sno                                      |
+| L'intelligence humaine                                                      | Luc TRUNTZLER                       | TEDxLimoges                           | https://www.youtube.com/watch?v=SMMpwNSgN3E                                      |
+| L'IA va-t-elle changer notre métier de développeur ?                        | Louis-Guillaume MORAND, Eric GRENON | Devoxx 2023                           | https://www.youtube.com/watch?v=vQqOV83ZMpE                                      |
+| Comprendre et utiliser les modèles de langage d'IA                          | Sébastien COLLET                    | Devoxx 2023                           | https://www.youtube.com/watch?v=ZbWL2W53BXY                                      |
+| Alfredo Linguini et les Modèles Génératifs : Qui Fait Vraiment la Cuisine ? | Yann Carbonne                       | Devfest 2023                          | https://youtu.be/W0h0lyrtABI?si=VUuCWHQWE2cZqGxS                                 |
+| Course à l'IA, vers le meilleur des mondes ?                                | -                                   | ARTE                                  | https://www.youtube.com/watch?v=_kcnrG6Yxfo                                      |
+| Perdons-nous le contrôle sur l'IA ?                                         | -                                   | 42 - La réponse à presque tout (ARTE) | https://www.youtube.com/watch?v=HyoABbailQQ                                      |
+| IA : notre futur assistant ou nouveau maître ?                              | Justine Cassell et Cédric Villani   | Thinkerview                           | https://www.youtube.com/watch?v=GeYs3k5Y-Rg                                      |
+| Intelligence artificielle, bullsh*t, pipotron ?                             | Benjamin Bayart                     | Thinkerview                           | https://www.youtube.com/watch?v=tTb5wQw_8JE                                      |
+| Préparez-vous à la réflexion hybride                                        | Ray Kurzweil                        | TED                                   | https://www.ted.com/talks/ray_kurzweil_get_ready_for_hybrid_thinking?language=fr |
+| Préparez-vous à la réflexion hybride                                        | Ray Kurzweil                        | TED                                   | https://www.ted.com/talks/ray_kurzweil_get_ready_for_hybrid_thinking?language=fr |
+| Comment les I.A. font-elles pour comprendre notre langue ?                  | ScienceEtonnante                    | ScienceEtonnante                      | https://www.youtube.com/watch?v=CsQNF9s78Nc                                      |
+| Ce qui se cache derrière le fonctionnement de ChatGPT                       | ScienceEtonnante                    | ScienceEtonnante                      | https://www.youtube.com/watch?v=7ell8KEbhJo                                      |
 
 ## Lecture académique
 

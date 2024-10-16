@@ -20,8 +20,11 @@
 
 
 - [Discuter avec bot](#discuter-avec-bot)
-- [Créer une story](#créer-une-story)
-- [Les premieres phases de qualifications](#les-premieres-phases-de-qualifications)
+- [Ajuster l'URL du bot API](#ajuster-lurl-du-bot-api)
+- [Dialoger avec le bot](#dialoger-avec-le-bot)
+- [Créer FAQ](#créer-faq)
+- [Tester la FAQ](#tester-la-faq)
+- [Désactiver la FAQ](#désactiver-la-faq)
 
 
 - [Ressources](#ressources)
@@ -69,61 +72,72 @@ Vous pouvez directement écrire le message bonjour et voir ce qu'il vous répond
 
 <img src="img/not-understand.png"  alt="not-understand">
 
-Si vous recommencez, vous verrez que le bot vous répond toujours la même chose. C'est normal, il n'a pas encore appris a vous répondre autre chose.
-
-><img src="img/idea.gif"  alt="idea" width="30" height="30"> Il existe un autre moyen de tester le bot depuis l'interface Tock Studio. A vous de le découvrir.
+Si vous recommencez, vous verrez que le bot vous répond toujours la même chose. C'est normal, il ne comprend pas encore la question.
 
 
-En allant dans l'interface de Tock Studio, vous pouvez voir votre message dans la partie **Language Understanding** > 
-**Inbox sentences** et voir que votre question est qualifiée avec une intention '**unknown**'.
+### Créer FAQ
 
-<img src="img/Indox-sentences-tock-studio.png" alt="Indox sentences">
+Allez dans la partie **Stories & Answers** > **FAQs stories** pour créer notre première interaction avec le bot.
 
-Pour créer une nouvelle **intention**, vous pouvez cliquer sur la petite boussole grise qui affiche le texte **Create New intent** et donner un nom à votre intention. Par exemple, **hello**. Puis cliquez sur l'icône verte **Validate** pour qualifier le mot Bonjour
+<img src="img/creation-faqs-stories.png" alt="faq stories">
 
-Depuis la page de test [index.html](index.html), si vous retester à nouveau en écrivant **Bonjour**, vous verrez que le bot vous répondra toujours la même chose. C'est normal, il n'a pas encore appris à vous répondre autre chose.
 
-Pour ce faire, vous devez créer une **story** qui permettra de répondre à la notion du bonjour.
+Cliquez sur le bouton bleu **+NEW FAQ STORY** pour voir apparaitre cet écran
 
-### Créer une story
+<img src="img/step-1-faqs.png" alt="step1">
 
-Allez dans la partie **Stories & Answers** de Tock Studio et cliquez sur l'onglet **New Story**.
-Vous pouvez donner un nom à votre story, par exemple **greetings**, dans la partie **Answer** vous pouvez écrire 
-cette phrase :
+Donnez un nom à votre FAQ, pour nous se sera : **demo faq codelab**
+
+<img src="img/title-faqs.png" alt="title">
+
+Cliquez ensuite sur l’onglet **QUESTION**
+
+Dans le champ **Question**, écrivez **bonjour** puis cliquer sur **ADD**
+
+<img src="img/add-question.png" alt="question">
+
+Vous devriez avoir ce rendu :
+
+<img src="img/resultat-add.png" alt= "resultat-add">
+
+Ensuite, cliquez sur **ANSWER** pour ajouter une réponse à la question **bonjour**.
+Copiez-collez le texte suivant dans le champ **Answer** :
 
 ```
 Bonjour le Devfest 2024,
 Vous êtes au codelab:  RAG against the Machine 😎🤖: créez votre propre bot IAGen sans Internet
 ```
 
-Où inventer une réponse que le bot doit donner lorsqu'il reçoit l'intention **greetings**.
+Vous devriez avoir ce rendu :
 
-<img src="img/story-greetings.png"  alt="story greetings">
+<img src="img/answer-faqs.png" alt="faqs">
 
-Dès que vous avez fini de créer votre story, vous pouvez cliquer sur le bouton vert **CREATE STORY** pour valider votre story.
+Puis cliquez sur le bouton **SAVE** pour enregistrer votre FAQ et ainsi avoir ce rendu :
 
+<img src="img/final-result-faqs.png" alt="final-result-faqs">
 
-Une fois que vous avez créé votre story, vous pouvez retourner sur la page de test [index.html](index.html) et écrire **greetings**.
-Vous verrez que le bot vous répondra avec la réponse que vous avez créée.
-Toutefois, si vous écrivez autre chose, comme par exemple "bonjour", le bot vous répondra qu'il ne comprend pas.
-C'est normal, il n'a pas encore appris à répondre à d'autres questions.
+### Tester la FAQ
 
-<img src="img/not-understand-again.png" alt="not understand again">
+Depuis la page de test [index.html](index.html), si vous retester à nouveau en écrivant **Bonjour**, vous verrez que le 
+bot vous répondra ce qu’il a appris.
 
-### Les premieres phases de qualifications
+<img src="img/resultat-faqs-with-chatbot.png" alt="resultat-faqs-with-chatbot">
 
-Lorsque vous souhaitez que le bot apprenne à reconnaître une intention, vous devez lui donner des exemples de phrases qui correspondent à cette intention.
-Pour ce faire, vous pouvez aller dans la partie **Language Understanding** > **Inbox sentences** et choisissez une phrase qui correspond à l'intention que vous avez créée.
-
-Par exemple, si vous avez créé l'intention **greetings**, vous pouvez choisir une phrase qui correspond à cette intention.
-Par exemple, **Bonjour**, **Salut**, **Hello**.
 
 
 >Note : si vous souhaitez retrouver les exemples de phrases que vous avez donné à votre bot, vous pouvez aller dans 
 > la partie **Language Understanding** > **Search sentences**.
 
 
+<img src="img/search-sentences-example.png" alt="search-sentences-example">
 
+
+### Désactiver la FAQ
+
+Pour les besoins du codelab, nous vous conseillons de désactiver votre FAQ. Pour se faire, retournez dans 
+**Stories & Answers** > **FAQs stories**, puis cliquez sur « **Disable** » afin de griser ce toggle.
+
+<img src="img/disable-faq.png" alt="disable-faq">
 
 ## Ressources
 

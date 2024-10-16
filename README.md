@@ -26,6 +26,9 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 - [Connecter notre bot à notre boutique](step_8.md)
 
 
+- [Bonus - Observabilité](step_9_bonus_observabilite.md)
+
+
 - [Remerciements](thanks-you.md)
 
 ## Pour aller plus loin

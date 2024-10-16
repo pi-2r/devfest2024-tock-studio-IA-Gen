@@ -40,3 +40,7 @@ produits de la boutique. Par exemple, vous pouvez demander à notre bot de vous 
 vous donner des informations sur un produit en particulier.
 
 <img src="img/talk-with-tock.png" alt="Parlons avec notre bot">
+
+## Étape suivante
+
+- [Étape 9 - Bonus observabilité](step_9_bonus_observabilite.md)

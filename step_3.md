@@ -17,7 +17,6 @@ Objectifs:
   - [Qu'est-ce que le LLM ?](#quest-ce-que-le-llm)  
 
 
-
 - [Installer Ollama](#installer-ollama)
   - [Installation depuis le Codelab](#installation-depuis-le-codelab)
     - [Récupérer les modèles pour l'atelier sur la machine GPU](#récupérer-les-modèles-pour-latelier-sur-la-machine-gpu)

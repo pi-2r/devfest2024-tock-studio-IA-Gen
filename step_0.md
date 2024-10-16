@@ -9,7 +9,7 @@ La solution fut créée par SNCF Connect and Tech en 2016 pour motoriser le chat
 SNCF Connect utilisé quotidiennement par des millions de français). Partagée en opensource sur GitHub dès 2017,
 la solution a depuis été reprise par de nombreuses entreprises et une communauté d'utilisateurs et de contributeurs s'est créée.
 
-Conçue comme une plateforme d'intégration de briques NLP (Natural Language Processing) sous dépendance forte et apportant
+Conçue comme une plateforme d'intégration de briques NLP (Natural Language Processing) sans dépendance forte et apportant
 à la fois des interfaces graphiques utilisateur et un framework conversationnel en Kotlin, la plateforme a ensuite bien
 évolué : connecteurs à de nombreux canaux texte et voix, création de bots en mode "low code" dans Tock Studio, 
 compatibilité avec d'autres langages de programmation comme Javascript ou Python, ajout de fonctionnalités analytiques,

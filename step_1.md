@@ -80,6 +80,9 @@ Pour information.
 
 Dans le cadre de ce codelab vous allez pouvoir utiliser certains composants en local (ou des instances mises à 
 disposition, en cas de difficultés). Tout est configuré dans le fichier `docker/.env` :
+
+> Note: Si vous avez un Mac, il faut utiliser le fichier template-arn64.env
+
 ```bash
 cp docker/template.env docker/.env
 # Pour sourcer les variable dans un terminal
@@ -160,6 +163,8 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 
 #### Sous MacOS / Windows
 Depuis docker desktop aller dans les paramètres puis Docker Engine et éditer la configuration json de la même manière que sous linux.
+
+<img src="img/docker-desktop-settings-insecure-registry.png"  alt="docker-insecure-registry">
 
 ### Lancement de la stack
 

@@ -69,26 +69,26 @@ services:
     #  - tock_service_log_level=info
     #  - tock_database_log_level=warn
 
-  duckling:
-    image: "${PLATFORM}tock/duckling:${TAG}"
-    environment:
-      - tock_env=prod
-      # - tock_default_log_level=warn
-      # - tock_service_log_level=info
-      # - tock_database_log_level=warn
-    expose:
-      - "8080"
+  # duckling:
+  #   image: "${PLATFORM}tock/duckling:${TAG}"
+  #   environment:
+  #     - tock_env=prod
+  #     # - tock_default_log_level=warn
+  #     # - tock_service_log_level=info
+  #     # - tock_database_log_level=warn
+  #   expose:
+  #     - "8080"
 
-  kotlin_compiler:
-    image: "${PLATFORM}tock/kotlin_compiler:${TAG}"
-    environment:
-      - tock_env=prod
-      - tock_kotlin_compiler_classpath=/maven
-    #      - tock_default_log_level=warn
-    #      - tock_service_log_level=info
-    #      - tock_database_log_level=warn
-    expose:
-      - "8080"
+  # kotlin_compiler:
+  #   image: "${PLATFORM}tock/kotlin_compiler:${TAG}"
+  #   environment:
+  #     - tock_env=prod
+  #     - tock_kotlin_compiler_classpath=/maven
+  #   #      - tock_default_log_level=warn
+  #   #      - tock_service_log_level=info
+  #   #      - tock_database_log_level=warn
+  #   expose:
+  #     - "8080"
 
   admin_web:
     image: "${PLATFORM}tock/bot_admin:${TAG}"
@@ -96,8 +96,8 @@ services:
       - mongo
       - mongo2
       - mongo3
-      - duckling
-      - kotlin_compiler
+      # - duckling
+      # - kotlin_compiler
     environment:
       - no_proxy=duckling,bot_api,kotlin_compiler
       - NO_PROXY=duckling,bot_api,kotlin_compiler
@@ -132,7 +132,7 @@ services:
       - mongo
       - mongo2
       - mongo3
-      - duckling
+      # - duckling
     environment:
       - no_proxy=duckling #Prevent traffic from using environment proxy
       - NO_PROXY=duckling
@@ -221,20 +221,20 @@ services:
       tock_gen_ai_orchestrator_vector_store_credentials_secret_name:
 
   # Copy from https://github.com/langfuse/langfuse/blob/main/docker-compose.yml
-  langfuse-server:
-    image: ${PLATFORM}langfuse/langfuse:${LANGFUSE_TAG}
-    depends_on:
-      postgres-db:
-        condition: service_healthy
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=postgresql://langfuse:langfuse@postgres-db:5432/langfuse
-      - NEXTAUTH_SECRET=mysecret
-      - SALT=mysalt
-      - NEXTAUTH_URL=http://localhost:3000
-      - TELEMETRY_ENABLED=${TELEMETRY_ENABLED:-true}
-      - LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES=${LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES:-false}
+  # langfuse-server:
+  #   image: ${PLATFORM}langfuse/langfuse:${LANGFUSE_TAG}
+  #   depends_on:
+  #     postgres-db:
+  #       condition: service_healthy
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://langfuse:langfuse@postgres-db:5432/langfuse
+  #     - NEXTAUTH_SECRET=mysecret
+  #     - SALT=mysalt
+  #     - NEXTAUTH_URL=http://localhost:3000
+  #     - TELEMETRY_ENABLED=${TELEMETRY_ENABLED:-true}
+  #     - LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES=${LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES:-false}
 
 volumes:
   tockmongo:

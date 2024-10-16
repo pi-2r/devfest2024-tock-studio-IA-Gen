@@ -106,7 +106,7 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 Éditer le fichier `/etc/docker/daemon.json` :
 ```json
 {
-    "insecure-registries" : [ "gpu-server.lan:5000" ]
+    "insecure-registries" : [ "gpu-server.lan:5000", "tock.lan:5000" ]
 }
 ```
 

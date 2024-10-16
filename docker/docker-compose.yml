@@ -177,7 +177,7 @@ services:
       - "8080:8080"
 
   postgres-db:
-    image: "${PLATFORM}pgvector/pgvector:pg16"
+    image: "${PLATFORM}pgvector/pgvector:${POSTGRES_TAG}"
     ports:
       - 5433:5432
     restart: always

@@ -6,6 +6,22 @@
 - Découvrir langfuse, création d'un compte, projet et clé d'API
 - Configurer langfuse dans tock
 
+## Sommaire
+
+- [ Gen AI - Observability Settings](#gen-ai---observability-settings)
+    - [Accéder à Langfuse](#accéder-à-langfuse)
+    - [Créer une nouvelle organisation](#créer-une-nouvelle-organisation)
+    - [Créer un nouveau projet](#créer-un-nouveau-projet)
+    - [Récupérer les clés d'API](#récupérer-les-clés-dapi)
+
+
+- [Langfuse et Tock Studio](#langfuse-et-tock-studio)
+    - [Connecter Tock Studio à Langfuse](#connecter-tock-studio-à-langfuse)
+    - [générer des phrases d'entraînement](#générer-des-phrases-dentraînement)
+    - [Voir les traces dans Langfuse](#voir-les-traces-dans-langfuse)
+
+
+
 # Gen AI - Observability Settings
 
 - L'observabilité des modèles de langage (LLM Observability) aide à surveiller, d'analyser et de comprendre le comportement des modèles de langage à grande échelle.

@@ -19,16 +19,6 @@
 - [Dépendance](#docker)
 
 
-- [Installer Ollama](#installer-ollama)
-  - [Installation depuis le Codelab](#installation-depuis-le-codelab)
-    - [Récupérer les modèles pour l'atelier sur la machine GPU](#récupérer-les-modèles-pour-latelier-sur-la-machine-gpu)
-    - [Autorisation de la registy locale insecure](#autorisation-de-la-registry-locale-insecure)
-      - [Sous linux](#sous-linux)
-      - [Sous MacOS / Windows](#sous-macos--windows)
-  - [Récupérer les modèles depuis internet hors du Codelab](#récupérer-les-modèles-depuis-internet-hors-du-codelab)
-  - [Tester avec un petit prompt](#tester-avec-un-petit-prompt)
-  
-
 - [Lancer l'environnement avec Docker](#lancer-lenvironnement-avec-docker)
 
 
@@ -99,63 +89,6 @@ source docker/.env
 
 Ce fichier documente toutes les configurations dans la suite du tutoriel vous aurez peut-être besoin d'en modifier si un composants ne marche pas chez vous. Celà sera indiqué dans la suite du tutoriel.
 
-
-## Installer Ollama
-
-Pour installer Ollama, vous devez aller sur le lien suivant : https://ollama.com/ et suivre les instructions pour télécharger Ollama sur votre machine. Une fois que cela est fait, dézipper le fichier et installer le programme sur votre machine. A la fin de l’installation Ollama vous conseil d’installer un model sur votre machine. Ce modèle fait plus de 6Go, et nous n’allons pas en avoir besoin. Il faut donc décliner le téléchargement de ce modèle.
-
-<img src="img/ollama.png"  alt="ollama">
-
-### Récupérer les modèles pour l'atelier sur la machine GPU
-
-Pour éviter de congestionner le réseau, nous avons pré-téléchargé les modèles pour voir.
-
-* Télécharger l'archive :
-  * Version light si vous n'avez pas de GPU ou peu d'espace disque disponible http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
-* Décompresser l'archive dans :
-  * macOS: `~/.ollama/models`
-  * Linux: `/usr/share/ollama/.ollama/models`
-  * Windows: `C:\Users\%username%\.ollama\models`
-* En lignes de commandes ça donne ça, avec l'emplacement sous linux :
-```bash
-curl -o /tmp/models.tar http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
-sudo mkdir -p /usr/share/ollama/.ollama/models
-sudo tar -xvf /tmp/models.tar -C /usr/share/ollama/.ollama/models
-sudo chown -R ollama:ollama /usr/share/ollama/.ollama/models
-ollama list # Devrait vous afficher les modèles
-```
-
-**TODO préparer l'archive et tester cette étape !!!**
-
-### Récupérer les modèles depuis internet hors du Codelab
-
-```
-ollama pull tinyllama
-ollama pull nomic-embed-text
-```
-
-### Tester avec un petit prompt
-
-```bash
-ollama run tinyllama
-```
-
-Une fois ce modèle téléchargé et toujours dans le terminal vous pouvez tester/jouer avec le modèle
-(entrez une question pour voir si le modèle répond), ou quitter 
-en appuyant sur CTRL + D.
-
-### ⚠️ Fallback : Ollama ne marche pas
-
-Installation trop lente ? ça rame .... pas de soucis vous allez pouvoir utiliser le serveur Ollama présent sur **http://gpu-server.lan:11434**.
-N'installez pas Ollama passez à la suite.
-
-Modifiez dans le fichier `docker/.env` les lignes suivantes pour utiliser le serveur ollama du codelab :
-```bash
-# Ollama (requires RAM and works better with a GPU)
-#   export OLLAMA_SERVER=host-gateway # LOCAL ollama server
-#   export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan, unfornately docker compose needs an IP addr
-export OLLAMA_SERVER=192.168.20.2 # OUR CODELAB ollama server at gpu-server.lan, unfornately docker compose needs an IP addr
-```
 
 ## Lancer l'environnement avec Docker
 

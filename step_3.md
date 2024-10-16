@@ -17,6 +17,8 @@ Objectifs:
   - [Qu'est-ce que le LLM ?](#quest-ce-que-le-llm)  
 
 
+- [Lancer les services gen-ai](#lancer-les-services-gen-ai)
+
 - [Installer Ollama](#installer-ollama)
   - [Installation depuis le Codelab](#installation-depuis-le-codelab)
     - [Récupérer les modèles pour l'atelier sur la machine GPU](#récupérer-les-modèles-pour-latelier-sur-la-machine-gpu)
@@ -74,6 +76,15 @@ Vous en conviendrez que si la plates-forme de lancement (**Fondation Model**) es
 en revanche si le la plates-forme de lancement est bancale et que la fusée par chez le voisin, il risque d'y avoir des dégâts !
 
 En se basant sur des modèles de fondation solides et éprouvés, les développeurs peuvent créer des applications qui utilisent l'IA de manière plus efficace et plus sûre.
+
+## Lancer les services gen-ai
+
+Dans le fichier `docker/docker-compose.yml` décommenter les services `gen_ai_orchestrator-server:`, `postgres-db:` et relancer un :
+```bash
+cd docker
+source .env
+docker compose -p devfest_tock up -d
+```
 
 ## Installer Ollama
 

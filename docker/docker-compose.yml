@@ -176,49 +176,49 @@ services:
     ports:
       - "8080:8080"
 
-  postgres-db:
-    image: "${PLATFORM}pgvector/pgvector:${POSTGRES_TAG}"
-    ports:
-      - 5433:5432
-    restart: always
-    healthcheck:
-      test: ["CMD-SHELL", "[ -f /var/lib/postgresql/data/db_init_completed ] && pg_isready -U postgres"]
-      interval: 5s
-      timeout: 20s
-      retries: 15
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=ChangeMe
-    volumes:
-      - pgvector-postgres-vl:/var/lib/postgresql/data
-      - ./scripts/init-pgvect.sql:/docker-entrypoint-initdb.d/init.sql
+  # postgres-db:
+  #   image: "${PLATFORM}pgvector/pgvector:${POSTGRES_TAG}"
+  #   ports:
+  #     - 5433:5432
+  #   restart: always
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "[ -f /var/lib/postgresql/data/db_init_completed ] && pg_isready -U postgres"]
+  #     interval: 5s
+  #     timeout: 20s
+  #     retries: 15
+  #   environment:
+  #     - POSTGRES_DB=postgres
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=ChangeMe
+  #   volumes:
+  #     - pgvector-postgres-vl:/var/lib/postgresql/data
+  #     - ./scripts/init-pgvect.sql:/docker-entrypoint-initdb.d/init.sql
 
-  gen_ai_orchestrator-server:
-    image: "${PLATFORM}tock/gen-ai-orchestrator-server:${TAG}"
-    ports:
-      - "8000:8000"
-    extra_hosts:
-      host.docker.internal: host-gateway
-      ollama-server: "${OLLAMA_SERVER}"
-    environment:
-      no_proxy: host.docker.internal,ollama-server,langfuse-server,localhost
-      NO_PROXY: host.docker.internal,ollama-server,langfuse-server,localhost
-      tock_gen_ai_orchestrator_application_environment: DEV
-      tock_gen_ai_orchestrator_em_provider_timeout: 120
-      tock_gen_ai_orchestrator_llm_provider_timeout: 120
-      tock_gen_ai_orchestrator_llm_provider_max_retries: 0
-      tock_gen_ai_orchestrator_vector_store_provider: PGVector
-      tock_gen_ai_orchestrator_vector_store_host: postgres-db
-      tock_gen_ai_orchestrator_vector_store_port: 5432
-      tock_gen_ai_orchestrator_vector_store_user: postgres
-      tock_gen_ai_orchestrator_vector_store_pwd: ChangeMe
-      tock_gen_ai_orchestrator_vector_store_database: postgres
-      tock_gen_ai_orchestrator_vector_store_timeout: 5
-      tock_gen_ai_orchestrator_vector_store_k: 4
-      tock_gen_ai_orchestrator_vector_store_test_query: virement bancaire
-      tock_gen_ai_orchestrator_vector_store_secret_manager_provider:
-      tock_gen_ai_orchestrator_vector_store_credentials_secret_name:
+  # gen_ai_orchestrator-server:
+  #   image: "${PLATFORM}tock/gen-ai-orchestrator-server:${TAG}"
+  #   ports:
+  #     - "8000:8000"
+  #   extra_hosts:
+  #     host.docker.internal: host-gateway
+  #     ollama-server: "${OLLAMA_SERVER}"
+  #   environment:
+  #     no_proxy: host.docker.internal,ollama-server,langfuse-server,localhost
+  #     NO_PROXY: host.docker.internal,ollama-server,langfuse-server,localhost
+  #     tock_gen_ai_orchestrator_application_environment: DEV
+  #     tock_gen_ai_orchestrator_em_provider_timeout: 120
+  #     tock_gen_ai_orchestrator_llm_provider_timeout: 120
+  #     tock_gen_ai_orchestrator_llm_provider_max_retries: 0
+  #     tock_gen_ai_orchestrator_vector_store_provider: PGVector
+  #     tock_gen_ai_orchestrator_vector_store_host: postgres-db
+  #     tock_gen_ai_orchestrator_vector_store_port: 5432
+  #     tock_gen_ai_orchestrator_vector_store_user: postgres
+  #     tock_gen_ai_orchestrator_vector_store_pwd: ChangeMe
+  #     tock_gen_ai_orchestrator_vector_store_database: postgres
+  #     tock_gen_ai_orchestrator_vector_store_timeout: 5
+  #     tock_gen_ai_orchestrator_vector_store_k: 4
+  #     tock_gen_ai_orchestrator_vector_store_test_query: virement bancaire
+  #     tock_gen_ai_orchestrator_vector_store_secret_manager_provider:
+  #     tock_gen_ai_orchestrator_vector_store_credentials_secret_name:
 
   # Copy from https://github.com/langfuse/langfuse/blob/main/docker-compose.yml
   # langfuse-server:

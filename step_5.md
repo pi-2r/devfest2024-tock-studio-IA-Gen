@@ -45,6 +45,8 @@ Cette fonctionnalité permettra à TOCK de générer une réponse à une requêt
 
 ### Activation du RAG & Configuration du LLM Engine
 
+Écran d'exemple d'une configuration du RAG avec le LLM Engine (a ne pas suivre):
+
 ![RAG - Partie 1](img/gen-ai-settings-rag-llm_ollama.png "Ecran de configuration du RAG - Partie 1")
 
 **RAG activation :**

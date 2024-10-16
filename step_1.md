@@ -177,6 +177,11 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 }
 ```
 
+Relancer docker :
+```bash
+sudo systemctl restart docker.service
+```
+
 #### Sous MacOS / Windows
 Depuis docker desktop aller dans les paramètres puis Docker Engine et éditer la configuration json de la même manière que sous linux.
 

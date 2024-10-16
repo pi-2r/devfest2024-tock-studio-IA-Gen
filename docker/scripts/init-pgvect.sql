@@ -27,4 +27,4 @@ GRANT ALL PRIVILEGES ON SCHEMA public TO langfuse;
 -- Alter default privileges for tables created in the public schema
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO langfuse;
 
-\! touch /tmp/db_init_completed
+\! touch /var/lib/postgresql/data/db_init_completed

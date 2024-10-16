@@ -262,6 +262,9 @@ Pour se connecter, utilisez les identifiants suivants :
 
 ## Configurer Tock Studio
 
+Au premier accès à Tock Studio, un assistant simplifié permet de créer un premier assistant (automatiquement nommé 
+_new_assistant_).
+
 <img src="img/tock-studio-step1.png"  alt="Tock-Studio-example">
 
 - A l'étape 1,**Choose your language** sélectionnez la langue **English** et cliquer sur le bouton **Next**.
@@ -273,39 +276,57 @@ Pour se connecter, utilisez les identifiants suivants :
 
 ## Créer votre 1er Application
 
-Dans la section Settings, cliquez sur le bouton **+ NEW APPLICATION**. Remplissez les champs requis comme dans l'exemple
-suivant :
+On va maintenant créer pour le Codelab une application nommée _devfest2024_ (car plusieurs bots peuvent coexister dans une instance de plateforme Tock).
 
+Dans la section **Settings > Applications**, cliquez sur **+ NEW APPLICATION** et remplissez les champs comme dans cet exemple :
 
 <img src="img/application-tock.png"  alt="create-new-configuration-on-tock-studio">
 
-Une fois cela fait, cliquez sur le bouton **CREATE**.
+Terminez avec le bouton **CREATE**.
 
 ## Créer votre 1er connecteur web
 
-Dans la section **Settings** > **CONFIGURATIONS**, cliquez sur le bouton **+ NEW CONFIGURATION** pour créer, comme dans
-l'exemple suivant un connecteur web avec comme endpoint /io/app/devfest2024/web
+On va créer un premier "endpoint" pour pouvoir interagir avec le bot. 
+Chaque endpoint correspond à une API avec un protocole précis, permettant par exemple d'intégrer un bot
+à plusieurs canaux externes comme Slack, WhatsApp, Messenger, etc. qui ne parlent évidemment pas le même langage.
+
+On peut attacher (et retirer) autant de endpoints qu'on veut à un bot. On parle pour cela de 
+_configurations_ ou _connecteurs_.
+
+Le endpoint le plus simple pour parler à un bot Tock est le **connecteur Web**.
+
+Dans la section **Settings** > **Configurations**, cliquez sur **+ NEW CONFIGURATION** et sélectionnez le type **Web**
+et terminez par **Create**. Le bot sera alors accessible à l'URL /io/app/devfest2024/web
 
 
 <img src="img/connecteur-tock.png"  alt="create-web-connector">
 
-Une fois cela fait, cliquez sur le bouton **CREATE**.
-
 
 ## Interroger le bot
 
-Dans ce projet et une fois toutes les étapes précédemment réalisées, vous pouvez ouvrir depuis votre navigateur (CTRL + O, ouvrir le fichier de ce repo cloné) et commencer à dialoguer avec le bot au choix :
-* Page web intégrant le [Tock React Kit](https://github.com/theopenconversationkit/tock-react-kit) 👉 [index.html](index.html)
-* Page web intégrant le [Tock Vue Kit](https://github.com/theopenconversationkit/tock-vue-kit) 👉 [index-tvk.html](index-tvk.html)
+Il est temps de parler à notre bot, on va pour cela utiliser une page Web toute simple, embarquant un petit kit de connexion 
+à un bot Tock (fourni dans la distribution sur GitHub) et bien sûr un navigateur Web.
 
-Vous devez ensuite si nécessaire ajuster l'URL dite du Bot API, il s'agit du l'API Rest servant de point d'entrée à la réception des message des divers connecteurs dont le connecteur web, le format de l'URL est le suivant : `http://localhost:8080/io/<NAMESPACE>/<BOTID>/web`. Si vous utilisez la stack TOCK du CODELAB (pas en local / docker), utilisez cette URL `http://tock.lan:8080/io/<NAMESPACE>/<BOTID>/web`.
+Il existe 2 kits fournis pour intégrer un bot Tock dans une page via React ou Vue.
+Choisissez l'une de ces deux pages présentes dans le repo Git et ouvrez-la dans votre navigateur Web 
+(par exemple avec CTRL + O > ouvrir le fichier) pour dialoguer avec le bot :
+* Page web avec [Tock React Kit](https://github.com/theopenconversationkit/tock-react-kit) 👉 [index.html](index.html)
+* Page web avec [Tock Vue Kit](https://github.com/theopenconversationkit/tock-vue-kit) 👉 [index-tvk.html](index-tvk.html)
 
-Vous trouverez votre `<NAMESPACE>` et `<BOTID>` dans le menu Config > Application :
+Si votre instance Tock n'est pas déployée en local, ou que vous avez modifié l'URL du connecteur à l'étape précédente,
+vous devrez peut-être modifier l'URL dans la source de la page Web (ligne commençant par `TockReact.renderChat`).
+Le format de l'URL est le suivant : `http://localhost:8080/io/<NAMESPACE>/<BOTID>/web`.
+Si vous utilisez la stack Tock mutualisée dans la salle du Codelab (ie. pas votre propre instance en local),
+ utilisez cette URL : `http://tock.lan:8080/io/<NAMESPACE>/<BOTID>/web`.
+
+> Si besoin, vous pouvez retrouver votre `<NAMESPACE>` et `<BOTID>` en haut à droite dans Tock Studio, ou dans le menu 
+> **Settings > Applications :
 ![Application et namespace](./img/find_ns_app_bot_id_studio.png)
 
 > Note : 
 > 
->Si vous voulez vous mettre dans l’ambiance Matrix, vous pouvez cliquer sur l’onglet **Activer Matrix**
+> Pour vous mettre dans l’ambiance Matrix (à vos risque et périls ;), essayez **Activer Matrix** en haut à droite une
+> fois la page index ouverte.
 
 ## Ressources
 

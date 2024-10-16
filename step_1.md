@@ -167,6 +167,7 @@ Depuis la racine de ce dossier, appliquez ces 3 commandes :
 
 ```bash
 cd docker
+source .env
 chmod a+r scripts/init-pgvect.sql # Quid sous windows ?
 docker compose -p devfest_tock up -d
 ```
@@ -212,6 +213,7 @@ export POSTGRES_DB_SERVER=192.168.20.3 # OUR CODELAB, remote tock stack at tock.
 N'hésitez pas à arrêter la stack docker et supprimer les ressources créés :
 ```bash
 cd docker
+source .env
 docker compose -p devfest_tock down -v
 ```
 

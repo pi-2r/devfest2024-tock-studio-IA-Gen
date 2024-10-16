@@ -125,7 +125,7 @@ docker run --rm -it \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
     --add-host=ollama-server:$OLLAMA_SERVER \
     --add-host=postgres-db:$POSTGRES_DB_SERVER \
-    tock/llm-indexing-tools:$TAG \
+    "${PLATFORM}tock/llm-indexing-tools:${TAG}" \
     /bin/bash
 ```
 
@@ -180,7 +180,7 @@ docker run --rm -it \
     -e no_proxy="host.docker.internal,ollama-server,postgres-db,localhost" \
     --add-host=ollama-server:$OLLAMA_SERVER \
     --add-host=postgres-db:$POSTGRES_DB_SERVER \
-    tock/llm-indexing-tools:$TAG \
+    "${PLATFORM}tock/llm-indexing-tools:${TAG}" \
     /bin/bash
 ```
 

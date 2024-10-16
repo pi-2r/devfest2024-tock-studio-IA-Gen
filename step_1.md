@@ -48,6 +48,14 @@
 - [En attendant la suite du Codelab...](#en-attendant-la-suite-du-codelab)
 - [Étape suivante](#étape-suivante)
 
+## Cloner ce repo
+
+Commencez par cloner ce repository :
+```bash
+git clone https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen.git
+cd devfest2024-tock-studio-IA-Gen
+```
+
 ## Le réseau de l'atelier
 
 L'objectif de cet atelier et de tout faire tourner en local sur votre poste. Pour accélérer encore plus les choses et éviter d'attendre de long temps de téléchargement nous avons monté un réseau local avec les éléments suivants :
@@ -103,11 +111,19 @@ Pour installer Ollama, vous devez aller sur le lien suivant : https://ollama.com
 Pour éviter de congestionner le réseau, nous avons pré-téléchargé les modèles pour voir.
 
 * Télécharger l'archive :
-  * Version light si vous n'avez pas de GPU ou peu d'espace disque disponible http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.zip
+  * Version light si vous n'avez pas de GPU ou peu d'espace disque disponible http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
 * Décompresser l'archive dans :
   * macOS: `~/.ollama/models`
   * Linux: `/usr/share/ollama/.ollama/models`
   * Windows: `C:\Users\%username%\.ollama\models`
+* En lignes de commandes ça donne ça, avec l'emplacement sous linux :
+```bash
+curl -o /tmp/models.tar http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
+sudo mkdir -p /usr/share/ollama/.ollama/models
+sudo tar -xvf /tmp/models.tar -C /usr/share/ollama/.ollama/models
+sudo chown -R ollama:ollama /usr/share/ollama/.ollama/models
+ollama list # Devrait vous afficher les modèles
+```
 
 **TODO préparer l'archive et tester cette étape !!!**
 
@@ -159,6 +175,11 @@ Pour éviter une congestion du réseau nous avons mis les images dans une regist
 {
     "insecure-registries" : [ "gpu-server.lan:5000" ]
 }
+```
+
+Relancer docker :
+```bash
+sudo systemctl restart docker.service
 ```
 
 #### Sous MacOS / Windows

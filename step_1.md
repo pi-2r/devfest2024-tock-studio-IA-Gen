@@ -103,11 +103,18 @@ Pour installer Ollama, vous devez aller sur le lien suivant : https://ollama.com
 Pour éviter de congestionner le réseau, nous avons pré-téléchargé les modèles pour voir.
 
 * Télécharger l'archive :
-  * Version light si vous n'avez pas de GPU ou peu d'espace disque disponible http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.zip
+  * Version light si vous n'avez pas de GPU ou peu d'espace disque disponible http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
 * Décompresser l'archive dans :
   * macOS: `~/.ollama/models`
   * Linux: `/usr/share/ollama/.ollama/models`
   * Windows: `C:\Users\%username%\.ollama\models`
+* En lignes de commandes ça donne ça :
+```bash
+curl -o /tmp/models.tar http://gpu-server.lan/ollama_models/tinyllama_nomic-embed-text.tar
+sudo mkdir -p /usr/share/ollama/.ollama/models
+sudo tar -xvf /tmp/models.tar -C /usr/share/ollama/.ollama/models
+sudo chown -R ollama:ollama /usr/share/ollama/.ollama/models
+```
 
 **TODO préparer l'archive et tester cette étape !!!**
 

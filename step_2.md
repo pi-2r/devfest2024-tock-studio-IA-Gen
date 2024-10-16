@@ -45,7 +45,7 @@ L'interface de Tock Studio est composée de plusieurs parties :
 ## Discuter avec bot
 
 Dans un premier temps, nous allons commencer par discuter avec le bot.
-Depuis votre page de test nomée [index.html](index.html)
+Depuis votre page de test nommée [index.html](index.html)
 
 ### Ajuster l'URL du bot API
 

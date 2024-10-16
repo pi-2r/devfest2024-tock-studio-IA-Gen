@@ -1,12 +1,12 @@
 # TODO Benjamin
 
-* [ ] ⏳️ Petit support avec le template du devfest : https://docs.google.com/presentation/d/1WIh_YAMMfUjPZAn5VcU8SX6IXH01jP025pKKcTBaxiI/edit#slide=id.g30ad9b2c75e_0_218
-* [ ] Test la registry docker local et MAJ le step 1 modifier la plateform
-* [ ] MAJ de la page sur le site publique TOCK avec les requirements
-* [ ] Relecture des steps avant
-* [ ] Test hors ligne avec routeur
+* [X] ⏳️ Petit support avec le template du devfest : https://docs.google.com/presentation/d/1WIh_YAMMfUjPZAn5VcU8SX6IXH01jP025pKKcTBaxiI/edit#slide=id.g30ad9b2c75e_0_218
+* [X] Test la registry docker local et MAJ le step 1 modifier la plateform
+* [X] MAJ de la page sur le site publique TOCK avec les requirements
+* [X] Relecture des steps avant
+* [X] Test hors ligne avec routeur
 * [ ] Prépa offline du dossier de modèle ollama, plusieurs variantes et tester. (voir step_1)
-* [ ] Step 2_1 finire de bouger ce qui lié au RAG qui arrive dans le Gen Sentence
+* [X] Step 2_1 finire de bouger ce qui lié au RAG qui arrive dans le Gen Sentence
 
 
 ## A voir avec Pierre
@@ -31,13 +31,13 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 * [X] Screenshot à revoir voir les TODO
 
 ## Step 2_2
-* [ ] @benjamin rédiger le step
+* [X] @benjamin rédiger le step
 * [ ] Héberger le dataset sur la machine GPU.
-* [ ] Revoir IP dans extra host ...
+* [X] Revoir IP dans extra host ...
 
 ### Step 3
-* [ ] Image a reprendre d'un step avant
-* [ ] Ajouter la config d'embedding + envoyer un message qui déclanche le RAG pour tester
+* [X] Image a reprendre d'un step avant
+* [X] Ajouter la config d'embedding + envoyer un message qui déclanche le RAG pour tester
 
 ### Step 4
 * [X] modification image pour matrix ok
@@ -51,3 +51,6 @@ Ce step n'est que sur la génération de phrase, j'ai commencé à décaler tout
 
 ### Step 6
 * [X] Brancher le tock reactkit sur le bot avec explication
+
+Tester avec ce dataset ? 
+https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies

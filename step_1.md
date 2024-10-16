@@ -53,6 +53,7 @@
 Commencez par cloner ce repository :
 ```bash
 git clone https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen.git
+cd devfest2024-tock-studio-IA-Gen
 ```
 
 ## Le réseau de l'atelier

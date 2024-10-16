@@ -38,14 +38,6 @@
 - [En attendant la suite du Codelab...](#en-attendant-la-suite-du-codelab)
 - [Étape suivante](#étape-suivante)
 
-## Cloner ce repo
-
-Commencez par cloner ce repository :
-```bash
-git clone https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen.git
-cd devfest2024-tock-studio-IA-Gen
-```
-
 ## Le réseau de l'atelier
 
 L'objectif de cet atelier et de tout faire tourner en local sur votre poste. Pour accélérer encore plus les choses et éviter d'attendre de long temps de téléchargement nous avons monté un réseau local avec les éléments suivants :
@@ -60,6 +52,18 @@ Modifiez votre fichier `/etc/hosts` (Mac / Linux) ou `C:\windows\system32\driver
 ```
 
 Nous ferons référence à ces éléments dans la suite du tutoriel.
+
+Connectez-vous en filaire idéalement ou en wifi :
+* SSID: codelab-tock-rag
+* Passphrase : `tock-123456`
+
+## Cloner ce repo
+
+Commencez par cloner ce repository :
+```bash
+git clone https://github.com/pi-2r/devfest2024-tock-studio-IA-Gen.git
+cd devfest2024-tock-studio-IA-Gen
+```
 
 ## Docker
 

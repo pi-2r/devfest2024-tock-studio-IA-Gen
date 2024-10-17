@@ -88,6 +88,7 @@ disposition, en cas de difficultés). Tout est configuré dans le fichier `docke
 ```bash
 cp docker/template.env docker/.env
 # Sur Mac: cp docker/template-arm64.env docker/.env 
+# Docker Hub sur Internet: cp docker/template-internet.env docker/.env 
 # Pour sourcer les variable dans un terminal
 source docker/.env
 ```

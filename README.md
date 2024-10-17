@@ -35,3 +35,8 @@ Ce projet github est issue du workshop fait par [Benjamin Bernard](https://devfe
 
 - [En savoir plus / ressources](resources.md)
 
+
+
+## Partagez votre étape
+
+https://docs.google.com/spreadsheets/d/1Qf6vTzFyzgsLoNDt7fDuUVA6cZeXI6pDYxy3xINcjB0/edit?usp=sharing

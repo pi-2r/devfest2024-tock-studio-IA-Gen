@@ -13,3 +13,8 @@
 [<img src="img/openfeedback-rag-against-the-mahcine-devfest-2024.png" alt="openfeedback-rag-against-the-mahcine-devfest-2024">](https://openfeedback.io/devfestnantes24/2024-10-17/ragagainstthemachinecreezvotreproprebotiagensansinternet)
 
 
+
+
+## Merci à vous !!
+
+[<img src="img/thanks-you.png"  alt="Merci à vous">](https://openfeedback.io/devfestnantes24/2024-10-17/ragagainstthemachinecreezvotreproprebotiagensansinternet)
